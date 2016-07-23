@@ -10,3 +10,6 @@
     A commit is save point within a branch. A good message would something that describes the changes made.
 * What is a merge conflict?
     Merge conflict occurs when trying to merge one branch into the current working branch. The changes can be accepted, denied or changed.
+
+
+    ALOHA!!!!
