@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>my fabulous form</title>
+    </head>
+    <body>
+      <form name="pokemon" action="success.html" method="post">
+        <fieldset>
+          <div>
+            <label>Username:</label>
+            <input type="text" name="username">
+          </div>
+
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password">
+          </div>
+
+          <div>
+            <label>Team:</label>
+            <select name="team">
+              <option value=" Instinct">Instinct </option>
+              <option value=" Mystic">Mystic</option>
+              <option value=" Valor">Valor</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Favorite Pokemon:</label>
+            <input type="text" name="favorite" placeholder="Favorite Pokemon">
+          </div>
+
+          <div>
+            <input type="checkbox" name="inventory1" value="Pokeball"> I have pokeballs.<br>
+            <input type="checkbox" name="inventory2" value="potion"> I have potions.<br>
+            <input type="checkbox" name="inventory3" value="incense"> I have incense.
+          </div>
+  
+          <div>
+            Pokeball Quantity (between 1 and 350):
+            <input type="number" name="Pokeball quantity" min="1" max="350">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div>
+            <input type="checkbox" name="agree"> I will do my very best.
+          </div>
+        </fieldset>
+
+        <button type="submit">Let's go catch'em all"</button>
+      </form>  
+    </body>
+  </html>
