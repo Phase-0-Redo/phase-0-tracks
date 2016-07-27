@@ -21,6 +21,8 @@ body {
   background-color: transparent;
   margin-left: 50%;
   position: absolute;
+  top: 20px;
+  right: 160px;
   z-index: 1;
 
 }
