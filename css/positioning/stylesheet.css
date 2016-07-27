@@ -19,6 +19,7 @@ body {
 #hat  {
   background-color: transparent;
   position: absolute;
+  z-index: 1;
 }
 
 #glasses {
