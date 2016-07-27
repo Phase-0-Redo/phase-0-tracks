@@ -1,3 +1,14 @@
+
+body {
+  background-color: blue;
+}
 img{
   background-color: orange;
+}
+
+#octopus {
+  background-color: blue;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
 }
