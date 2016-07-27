@@ -18,21 +18,27 @@ body {
 }
 
 #hat  {
-  background-color: transparent;
-  margin-left: 50%;
   position: absolute;
-  top: 20px;
-  right: 160px;
+  top: -65px;
+  right: -250px;
+  background-color: transparent;
+  width: inherit;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
   z-index: 1;
-
 }
 
 #glasses {
-  background-color: transparent;
-  margin-left: 50%;
+  
   position: absolute;
-  top: 190px;
-  left: 35px;
+  top: 105px;
+  left: 40px;
+  background-color: transparent;
+  width: inherit;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
   z-index:2;
   transform: rotate(180deg);
 
