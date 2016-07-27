@@ -7,8 +7,16 @@ img{
 }
 
 #octopus {
-  background-color: blue;
+  background-color: transparent;
   margin-top: 10%;
   margin-left: 50%;
   margin-right: 50%;
+}
+
+#hat  {
+  background-color: transparent;
+}
+
+#glasses {
+  background-color: transparent;
 }
