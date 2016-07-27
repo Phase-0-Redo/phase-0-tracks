@@ -1,4 +1,5 @@
 
+
 body {
   background-color: blue;
 }
@@ -8,7 +9,7 @@ body {
 }
 
 #octopus {
-
+  position: absolute;
   background-color: transparent;
   width: inherit;
   margin-top: 10%;
@@ -18,16 +19,18 @@ body {
 
 #hat  {
   background-color: transparent;
-  position: absolute;
+  margin-left: 50%;
+  position: relative;
   z-index: 1;
+
 }
 
 #glasses {
   background-color: transparent;
+  margin-right: 50%:;
   position: relative;
-  top: -190px;
-  left: 350px;
-  z-index: 1;
+  
+  z-index:2;
   transform: rotate(180deg);
 
 }
