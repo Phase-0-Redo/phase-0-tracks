@@ -23,7 +23,9 @@ body {
 
 #glasses {
   background-color: transparent;
-  position: absolute;
+  position: relative;
+  top: -295px;
+  left: 660px;
   z-index: 1;
   transform: rotate(180deg);
 
