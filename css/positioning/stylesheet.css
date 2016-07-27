@@ -20,16 +20,17 @@ body {
 #hat  {
   background-color: transparent;
   margin-left: 50%;
-  position: relative;
+  position: absolute;
   z-index: 1;
 
 }
 
 #glasses {
   background-color: transparent;
-  margin-right: 50%:;
-  position: relative;
-  
+  margin-left: 50%;
+  position: absolute;
+  top: 190px;
+  left: 35px;
   z-index:2;
   transform: rotate(180deg);
 
