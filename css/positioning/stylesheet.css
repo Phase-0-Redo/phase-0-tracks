@@ -2,12 +2,15 @@
 body {
   background-color: blue;
 }
-img{
-  background-color: orange;
+
+.images {
+  position: relative;
 }
 
 #octopus {
+
   background-color: transparent;
+  width: inherit;
   margin-top: 10%;
   margin-left: 50%;
   margin-right: 50%;
@@ -15,8 +18,13 @@ img{
 
 #hat  {
   background-color: transparent;
+  position: absolute;
 }
 
 #glasses {
   background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(180deg);
+
 }
