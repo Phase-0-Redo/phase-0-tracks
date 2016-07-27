@@ -1,0 +1,45 @@
+
+
+body {
+  background-color: blue;
+}
+
+.images {
+  position: relative;
+}
+
+#octopus {
+  position: absolute;
+  background-color: transparent;
+  width: inherit;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+#hat  {
+  position: absolute;
+  top: -65px;
+  right: -250px;
+  background-color: transparent;
+  width: inherit;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index: 1;
+}
+
+#glasses {
+  
+  position: absolute;
+  top: 105px;
+  left: 40px;
+  background-color: transparent;
+  width: inherit;
+  margin-top: 10%;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index:2;
+  transform: rotate(180deg);
+
+}
