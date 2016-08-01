@@ -7,9 +7,12 @@ age = gets.chomp
 puts "What year were you born?"
 year = gets.chomp
 
+puts "Our company cafeteria serves garlic bread. Should we order some for you?"
+answer = gets.chomp
 
 
 
 p name
 p age
 p year
+p answer
