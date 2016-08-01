@@ -31,3 +31,18 @@
 -Verify floor has been reached
 -Wait for doors to open
 -Exit elevator
+
+[Brewing Coffee]
+
+-Determine amount to be brewed
+-Scoop out beans from bean receptacle
+-Level scoop, placing excess in bean receptacle
+-Determine grind/brewer setting
+-Put beans into grinder
+-Place container for capturing grinds below grinder spout
+-Grind beans 
+-Empty container of grinds into filter
+-Place filter in basket
+-Insert basket
+-Place coffee pot underneath coffee brewer spigot
+-Hit brew
