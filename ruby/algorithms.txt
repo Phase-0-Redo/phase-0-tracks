@@ -1,0 +1,33 @@
+[Using an Elevator]
+-Find Up and Down buttons
+-If floor destination is greater than current floor
+    -Press Up
+    -If floor destination is lesser then press down button
+-Wait for door to open
+    -If door does not open press open door button, until door opens
+-When door opens walk inside
+-Stop once inside
+-Rotate until buttons are visible
+-Move towards buttons
+-Wait 5 seconds
+-Press button of floor destination
+-Ask “Does anyone need a ride?”
+    -If response is YES then press Door Open button
+        -Wait for potential riders
+        -Once all riders have entered 
+        -Ask “What floor?”
+        -Press floor buttons
+        -Upon arrival of requested floor
+            -Press and hold door open button
+        -Wait for riders to disembark
+        -If more riders enter, announce floor destination
+        -Wait 5 seconds
+        -If new riders stay d
+            -press Close Door button
+        -Ask for requested floor
+        -Repeat until floor destination is met
+    -If NO the press Door Close button
+-Wait for elevator to reach floor destination
+-Verify floor has been reached
+-Wait for doors to open
+-Exit elevator
