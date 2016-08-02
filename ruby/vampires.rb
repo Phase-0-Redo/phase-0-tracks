@@ -41,7 +41,13 @@ def real_age(year)
   2016 - year
 end
 
-
+age = nil
+if real_age(year) == potential_age
+  age = true
+elsif real_age(year) > potential_age
+  age = false
+end
+    
 
 p name
 p potential_age
@@ -49,5 +55,5 @@ p year
 p garlic
 p insurance
 p real_age(year)
-
+p age
 
