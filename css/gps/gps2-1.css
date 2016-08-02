@@ -1,22 +1,30 @@
 header {
-  
-  
+  border: 2px solid green;
+  padding: 10px;
 }
 
+img {
+  max-width: 25%;
+}
 
 .column-1 {
   display: inline-block;
-  
+  font-family: helvetica;
   max-width: 45%;
+  background-color: red;
+  height: 1200px;
 }
 
 .column-2 {
   display: inline-block;
-  
   max-width: 45%;
+  background-color: blue;
+  vertical-align: top;
+  height: 1200px;
 }
 
 footer {
-  
- 
+  border: 2px solid green;
+  padding: 10px;
+  margin-top: 20px;
 }
