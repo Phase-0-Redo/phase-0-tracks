@@ -13,9 +13,11 @@ valid_input = false
   garlic = gets.chomp
     if garlic == "yes"
       puts "One order for #{name}"
+      garlic = true
       valid_input = true
     elsif garlic == "no"
       puts "No garlic bread for #{name}"
+      garlic = false
       valid_input = true
     else
       puts "I'm sorry yes or no"
@@ -28,9 +30,11 @@ valid_input = false
   insurance = gets.chomp
     if insurance == "yes"
       puts "We have great medical coverage, #{name}"
+      insurance = true
       valid_input = true
     elsif insurance == "no"
       puts "#{name}, it's cool I get it."
+      insurance = false
       valid_input = true
     else
       puts "I'm sorry yes or no"
