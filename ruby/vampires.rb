@@ -53,11 +53,21 @@ elsif real_age(year) > potential_age
 end
     
 
-p name
-p potential_age
-p year
-p garlic
-p insurance
-p real_age(year)
-p age
+#p name
+#p potential_age
+#p year
+#p garlic
+#p insurance
+#p real_age(year)
+#p age
+
+if age && (garlic || insurance)
+  puts "Probably not a vampire"
+elsif !age && !(garlic && insurance)
+  puts "Almost certainly a vampire"
+else
+  puts "Probably a vampire"
+end
+
+
 
