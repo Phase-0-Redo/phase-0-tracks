@@ -1,3 +1,22 @@
-body {
-  background-color: blue;
+header {
+  
+  
+}
+
+
+.column-1 {
+  display: inline-block;
+  
+  max-width: 45%;
+}
+
+.column-2 {
+  display: inline-block;
+  
+  max-width: 45%;
+}
+
+footer {
+  
+ 
 }
