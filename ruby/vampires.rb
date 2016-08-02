@@ -2,10 +2,10 @@ puts "What is your name?"
 name = gets.chomp
 
 puts "How old are you?"
-age = gets.chomp
+potential_age = gets.chomp.to_i
 
 puts "What year were you born?"
-year = gets.chomp
+year = gets.chomp.to_i
 
 valid_input = false
   until valid_input
@@ -22,7 +22,6 @@ valid_input = false
     end
   end
     
-    
 valid_input = false
   until valid_input
   puts "Would you like to enroll in the company's health insurance?(yes or no)"
@@ -38,12 +37,17 @@ valid_input = false
     end
   end
 
-
+def real_age(year)
+  2016 - year
+end
 
 
 
 p name
-p age
+p potential_age
 p year
 p garlic
 p insurance
+p real_age(year)
+
+
