@@ -1,3 +1,9 @@
+puts "Hello hiring manager, how many are processing today?"
+manager_answer = gets.chomp.to_i
+
+forms = 0
+
+until forms == manager_answer
 puts "What is your name?"
 name = gets.chomp
 
@@ -46,11 +52,12 @@ def real_age(year)
 end
 
 age = nil
-if real_age(year) == potential_age
-  age = true
-elsif real_age(year) > potential_age
-  age = false
-end
+
+  if real_age(year) == potential_age
+    age = true
+  elsif real_age(year) > potential_age
+    age = false
+  end
     
 
 #p name
@@ -61,19 +68,20 @@ end
 #p real_age(year)
 #p age
 
-if age && (garlic || insurance)
-  puts "Probably not a vampire"
-elsif !age && !(garlic && insurance)
-  puts "Almost certainly a vampire"
-else
-  puts "Probably a vampire"
-end
+  if age && (garlic || insurance)
+    puts "Probably not a vampire"
+  elsif !age && !(garlic && insurance)
+    puts "Almost certainly a vampire"
+  else
+    puts "Probably a vampire"
+  end
 
-if name == "Drake Cula"
-  puts "Definitely a vampire"
-elsif name == "Tu Fang"
-  puts "Definitely a vampire"
-end
+  if name == "Drake Cula"
+    puts "Definitely a vampire"
+  elsif name == "Tu Fang"
+    puts "Definitely a vampire"
+  end
     
-  
+forms += 1
+end
 
