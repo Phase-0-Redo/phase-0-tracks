@@ -81,7 +81,24 @@ age = nil
   elsif name == "Tu Fang"
     puts "Definitely a vampire"
   end
-    
+  
+  puts "Please list any allergies, you know for medical reasons."
+
+  valid_input = false
+  until valid_input
+    allergies = gets.chomp
+    if allergies == "sunshine"
+      puts "I wear my sunglasses at night."
+      puts "Probably a vampire"
+      valid_input = true
+    elsif allergies == "done"
+      puts "Well lucky you"
+      valid_input = true
+    else 
+      puts "We have great coverage are you sure?"
+    end
+  end
 forms += 1
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
