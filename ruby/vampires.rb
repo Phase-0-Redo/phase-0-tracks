@@ -69,5 +69,11 @@ else
   puts "Probably a vampire"
 end
 
-
+if name == "Drake Cula"
+  puts "Definitely a vampire"
+elsif name == "Tu Fang"
+  puts "Definitely a vampire"
+end
+    
+  
 
