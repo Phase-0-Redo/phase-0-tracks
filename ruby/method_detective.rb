@@ -4,32 +4,37 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-"iNvEsTiGaTiOn".swapcase
-# => “InVeStIgAtIoN”
+p "iNvEsTiGaTiOn".swapcase
+p “InVeStIgAtIoN”
 
-"zom".insert(1,'o')
-# => “zoom”
+p "zom".insert(1,'o')
+p “zoom”
 
-"enhance".center(15, "    ")
-"enhance".ljust(11).rjust(15)
-"enhance".rjust(11).ljust(15)
-"enhance".insert(0,"    ").insert(-1, "    ")
-"enhance".prepend("    ") << "    "
-# => "    enhance    "
+p "enhance".center(15, "    ")
+p "enhance".ljust(11).rjust(15)
+p "enhance".rjust(11).ljust(15)
+p "enhance".insert(0,"    ").insert(-1, "    ")
+p "enhance".prepend("    ") << "    "
+p "    enhance    "
 
- "Stop! You’re under arrest!".upcase!
-# => "STOP! YOU’RE UNDER ARREST!"
+p "Stop! You’re under arrest!".upcase!
+p "STOP! YOU’RE UNDER ARREST!"
 
- "the usual" << " suspects"
- "the usual".insert(-1, " suspects")
- "the usual".rjust(18, " suspects") #not a fan but works
-#=> "the usual suspects"
+p "the usual" << " suspects"
+p "the usual".insert(-1, " suspects")
+p "the usual".ljust(18, " suspects") 
+p "the usual suspects"
 
-# " suspects".<???>
-# => "the usual suspects"
+p " suspects".insert(0, "the usual")
+p " suspects".prepend("the usual")
+p " suspects".rjust(18, "the usual")
+p "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
-# => "The case of the disappearing last lette"
+p "The case of the disappearing last letter"[0..38]
+p "The case of the disappearing last letter"[-40..-2]
+p "The case of the disappearing last letter".slice!(0..38)
+p "The case of the disappearing last letter".slice!(-40..-2)
+p "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
