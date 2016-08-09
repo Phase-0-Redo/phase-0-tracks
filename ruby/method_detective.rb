@@ -10,7 +10,11 @@
 "zom".insert(1,'o')
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(15, "    ")
+"enhance".ljust(11).rjust(15)
+"enhance".rjust(11).ljust(15)
+"enhance".insert(0,"    ").insert(-1, "    ")
+"enhance".prepend("    ") << "    "
 # => "    enhance    "
 
 # "Stop! You’re under arrest!".<???>
