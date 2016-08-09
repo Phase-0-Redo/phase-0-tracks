@@ -20,7 +20,9 @@
  "Stop! You’re under arrest!".upcase!
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+ "the usual" << " suspects"
+ "the usual".insert(-1, " suspects")
+ "the usual".rjust(18, " suspects") #not a fan but works
 #=> "the usual suspects"
 
 # " suspects".<???>
