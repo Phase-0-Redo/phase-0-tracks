@@ -39,6 +39,7 @@ p "The case of the disappearing last letter".slice!(-40..-2)
 p "The case of the disappearing last lette"
 
 p "The mystery of the missing first letter".delete("T")
+p "The mystery of the missing first letter".tr('T','')
 p "The mystery of the missing first letter"[1..38]
 p "The mystery of the missing first letter"[-38..-1]
 p "The mystery of the missing first letter".slice!(-38..-1)
@@ -49,9 +50,11 @@ p "Elementary,    my   dear        Watson!".squeeze
 p "Elementary,    my   dear        Watson!".squeeze(" ")
 p "Elementary, my dear Watson!"
 
-# "z".<???>
-# => 122 
+p "z".ord
+p "z".getbyte(0)
+p 122 
 # (What is the significance of the number 122 in relation to the character z?)
 
-# "How many times does the letter 'a' appear in this string?".<???>
-# => 4
+p "How many times does the letter 'a' appear in this string?".count "a"
+p "How many times does the letter 'a' appear in this string?".count "a-b"
+p 4
