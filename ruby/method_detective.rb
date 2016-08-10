@@ -31,6 +31,7 @@ p " suspects".prepend("the usual")
 p " suspects".rjust(18, "the usual")
 p "the usual suspects"
 
+p "The case of the disappearing last letter".chop
 p "The case of the disappearing last letter"[0..38]
 p "The case of the disappearing last letter"[-40..-2]
 p "The case of the disappearing last letter".slice!(0..38)
@@ -44,8 +45,9 @@ p "The mystery of the missing first letter".slice!(-38..-1)
 p "The mystery of the missing first letter".slice!(1..38)
 p "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
-# => "Elementary, my dear Watson!"
+p "Elementary,    my   dear        Watson!".squeeze
+p "Elementary,    my   dear        Watson!".squeeze(" ")
+p "Elementary, my dear Watson!"
 
 # "z".<???>
 # => 122 
