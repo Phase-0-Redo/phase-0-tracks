@@ -5,10 +5,11 @@
 # committed the crime, add additional calls to prove it.
 
 p "iNvEsTiGaTiOn".swapcase
-p “InVeStIgAtIoN”
+p "InVeStIgAtIoN"
+
 
 p "zom".insert(1,'o')
-p “zoom”
+p "zoom"
 
 p "enhance".center(15, "    ")
 p "enhance".ljust(11).rjust(15)
@@ -36,8 +37,12 @@ p "The case of the disappearing last letter".slice!(0..38)
 p "The case of the disappearing last letter".slice!(-40..-2)
 p "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
-# => "he mystery of the missing first letter"
+p "The mystery of the missing first letter".delete("T")
+p "The mystery of the missing first letter"[1..38]
+p "The mystery of the missing first letter"[-38..-1]
+p "The mystery of the missing first letter".slice!(-38..-1)
+p "The mystery of the missing first letter".slice!(1..38)
+p "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
