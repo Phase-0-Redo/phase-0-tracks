@@ -108,22 +108,32 @@ puts
 valid_input = false
 
 until valid_input
+  applicant.each_pair {|key, value| puts "#{key} is #{value}"}
+  puts
   puts "Would you like to update anything?"
   answer = gets.chomp.downcase
+  puts 
 
   if answer == "no"
+    puts
     puts "Thanks have a nice day!"
     valid_input = true
+    puts
   elsif answer == "done"
     puts "OK"
     valid_input = true
   elsif answer == "yes"
     applicant.each_pair {|key, value| puts "#{key} is #{value}"}
+    puts
     puts "What would you like to change?"
     answer_to_key = gets.chomp
     puts "Ok, lets change #{answer_to_key} from #{applicant[answer_to_key.to_sym]} to"
     new_answer = gets.chomp
+    puts
     applicant[answer_to_key.to_sym] = new_answer
+    puts
+    applicant.each_pair {|key, value| puts "#{key} is #{value}"}
+    puts
     puts "OK CHANGED"
     puts
     puts "Type done if finished updating"
@@ -135,4 +145,4 @@ until valid_input
 
 end
 
-p applicant
+p applicant[:age].class
