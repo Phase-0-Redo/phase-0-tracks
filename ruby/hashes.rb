@@ -18,50 +18,73 @@ applicant = {
 #user input for key name
 puts "Whats your name?"
 applicant[:name] = gets.chomp
+puts 
 
 #user input for key age
 puts "How old are you?"
 applicant[:age] = gets.chomp
+puts
 
 #user input for key children
 puts "How many kids do you have? If none type 0"
 applicant[:children] = gets.chomp
+puts 
 
 #user input for key address
 puts "What's your address?"
 applicant[:address] = gets.chomp
+puts
 
 #user input for key email
 puts "What's your email?"
 applicant[:email] = gets.chomp
+puts
 
 #user input for key phone
 puts "What's your phone number?"
 applicant[:phone] = gets.chomp
+puts
 
 #user input for key fave blue
 puts "What is your favorite shade of blue?"
 applicant[:fave_blue] = gets.chomp
+puts
 
 #user input for key decor theme
 puts "What is your favorite decor theme?"
 applicant[:decor_theme] = gets.chomp
+puts
 
 #user input for paisley preference
-puts "Do you like paisley?"
-applicant[:likes_paisley] = gets.chomp
+puts "Do you like paisley? yes or no"
+paisley = gets.chomp.downcase
+  if paisley == "yes"
+    applicant[:likes_paisley] = true
+  elsif paisley == "no"
+    applicant[:likes_paisley] = false
+  end
+
 
 #user input for chevrons
 puts "Do you like chevrons?"
-applicant[:likes_chevrons] = gets.chomp
+chevrons = gets.chomp.downcase
+  if chevrons == "yes"
+    applicant[:likes_chevrons] = true
+  elsif paisley == "no"
+    applicant[:likes_chevrons] = false
+  end
+    
+puts
 
 #user input for photorealistic
 puts "Do you like likes photorealistic woods?"
 applicant[:likes_photorealistic_woods] = gets.chomp
+puts
 
 #user input for abstract woods
 puts "Do you like abstract woods?"
 applicant[:likes_abstract_woods] = gets.chomp
+puts
 
 =begin
   asks user for input to update 
@@ -77,7 +100,7 @@ valid_input = false
 
 until valid_input
   puts "Would you like to update anything?"
-  answer = gets.chomp
+  answer = gets.chomp.downcase
 
   if answer == "no"
     puts "Thanks have a nice day!"
@@ -86,13 +109,14 @@ until valid_input
     puts "OK"
     valid_input = true
   elsif answer == "yes"
-    puts "What would you like to change?"
     applicant.each_pair {|key, value| puts "#{key} is #{value}"}
+    puts "What would you like to change?"
     answer_to_key = gets.chomp
     puts "Ok, lets change #{answer_to_key} from #{applicant[answer_to_key.to_sym]} to"
     new_answer = gets.chomp
     applicant[answer_to_key.to_sym] = new_answer
     puts "OK CHANGED"
+    puts
     puts "Type done if finished updating"
     puts
   else
