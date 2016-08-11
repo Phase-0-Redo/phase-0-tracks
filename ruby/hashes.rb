@@ -1,6 +1,7 @@
 applicant = {
   name: nil,
-  age: nil, 
+  age: nil,
+  children: nil, 
   address: nil, 
   email: nil, 
   phone: nil, 
@@ -19,6 +20,9 @@ applicant[:name] = gets.chomp
 
 puts "How old are you?"
 applicant[:age] = gets.chomp
+
+puts "How many kids do you have? If none type"
+applicant[:children] = gets.chomp
 
 puts "What's your address?"
 applicant[:address] = gets.chomp
