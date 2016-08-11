@@ -78,12 +78,22 @@ puts
 
 #user input for photorealistic
 puts "Do you like likes photorealistic woods?"
-applicant[:likes_photorealistic_woods] = gets.chomp
+photorealistic = gets.chomp.downcase
+  if photorealistic == "yes"
+    applicant[:likes_photorealistic_woods] = true
+  elsif photorealistic == "no"
+    applicant[:likes_photorealistic_woods] = false
+  end
 puts
 
 #user input for abstract woods
 puts "Do you like abstract woods?"
-applicant[:likes_abstract_woods] = gets.chomp
+abstract = gets.chomp.downcase
+  if abstract == "yes"
+    applicant[:likes_abstract_woods] = true
+  elsif abstract == "no"
+    applicant[:likes_abstract_woods] = false
+  end
 puts
 
 =begin
