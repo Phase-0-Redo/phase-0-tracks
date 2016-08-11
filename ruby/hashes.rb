@@ -29,6 +29,17 @@ applicant[:fave_blue] = gets.chomp
 puts "Do you like paisley"
 applicant[:likes_paisley] = gets.chomp
 
+puts "Do you like chevrons"
+applicant[:likes_chevrons] = gets.chomp
+
+puts "Do you like likes photorealistic woods"
+applicant[:likes_photorealistic_woods] = gets.chomp
+
+puts "Do you like abstract woods"
+applicant[:likes_abstract_woods] = gets.chomp
+
+
+
 
 
 
