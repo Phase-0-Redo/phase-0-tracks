@@ -66,6 +66,10 @@ applicant[:likes_abstract_woods] = gets.chomp
 =begin
   asks user for input to update 
   any information of their application
+  no will end the loop
+  done will end the loop
+  yes will follow with another question
+  which 
   use an until loop to satisfy valid_input
 =end
 
@@ -83,13 +87,14 @@ until valid_input
     valid_input = true
   elsif answer == "yes"
     puts "What would you like to change?"
-    puts 
+    applicant.each_pair {|key, value| puts "#{key} is #{value}"}
     answer_to_key = gets.chomp
     puts "Ok, lets change #{answer_to_key} from #{applicant[answer_to_key.to_sym]} to"
     new_answer = gets.chomp
     applicant[answer_to_key.to_sym] = new_answer
     puts "OK CHANGED"
     puts "Type done if finished updating"
+    puts
   else
     puts "Im sorry yes or no."
     puts
