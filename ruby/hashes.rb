@@ -1,16 +1,17 @@
 applicant = {
-  name: nil,
-  age: nil,
-  children: nil, 
-  address: nil, 
-  email: nil, 
-  phone: nil, 
-  fave_blue: nil, 
-  likes_paisley: nil, 
-  likes_chevrons: nil, 
-  likes_photorealistic_woods: nil, 
-  likes_abstract_woods: nil, 
-  ombre: nil
+  name: nil, # => String
+  age: nil, # => Integer
+  children: nil, # => Integer
+  address: nil, # => String
+  email: nil, # => String
+  phone: nil, # => String
+  fave_blue: nil, #=> Boolean
+  decor_theme: nil,
+  likes_paisley: nil, #=> Boolean
+  likes_chevrons: nil, #=> Boolean
+  likes_photorealistic_woods: nil, #=> Boolean 
+  likes_abstract_woods: nil, #=> Boolean
+  ombre: nil #=> String
 }
 
 
@@ -35,6 +36,9 @@ applicant[:phone] = gets.chomp
 
 puts "What is your favorite shade of blue?"
 applicant[:fave_blue] = gets.chomp
+
+puts "What is your favorite decor theme?"
+applicant[:decor_theme] = gets.chomp
 
 puts "Do you like paisley"
 applicant[:likes_paisley] = gets.chomp
