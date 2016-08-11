@@ -1,5 +1,6 @@
 applicant = {
-  name: nil, 
+  name: nil,
+  age: nil, 
   address: nil, 
   email: nil, 
   phone: nil, 
@@ -11,8 +12,13 @@ applicant = {
   ombre: nil
 }
 
+
+
 puts "Whats your name?"
 applicant[:name] = gets.chomp
+
+puts "How old are you?"
+applicant[:age] = gets.chomp
 
 puts "What's your address?"
 applicant[:address] = gets.chomp
@@ -38,10 +44,8 @@ applicant[:likes_photorealistic_woods] = gets.chomp
 puts "Do you like abstract woods"
 applicant[:likes_abstract_woods] = gets.chomp
 
-
-
-
-
+puts "Would you like to update anything?"
+answer = gets.chomp
 
 
 
