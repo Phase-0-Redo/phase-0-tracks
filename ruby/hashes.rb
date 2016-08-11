@@ -63,7 +63,7 @@ paisley = gets.chomp.downcase
   elsif paisley == "no"
     applicant[:likes_paisley] = false
   end
-
+puts
 
 #user input for chevrons
 puts "Do you like chevrons?"
@@ -73,7 +73,6 @@ chevrons = gets.chomp.downcase
   elsif paisley == "no"
     applicant[:likes_chevrons] = false
   end
-    
 puts
 
 #user input for photorealistic
