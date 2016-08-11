@@ -11,3 +11,8 @@ applicant = {
   ombre: nil
 }
 
+puts "Whats your name?"
+applicant[:name] = gets.chomp
+
+puts "What's "
+p applicant
