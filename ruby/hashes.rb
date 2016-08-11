@@ -24,7 +24,7 @@ puts "How old are you?"
 applicant[:age] = gets.chomp
 
 #user input for key children
-puts "How many kids do you have? If none type"
+puts "How many kids do you have? If none type 0"
 applicant[:children] = gets.chomp
 
 #user input for key address
@@ -48,24 +48,25 @@ puts "What is your favorite decor theme?"
 applicant[:decor_theme] = gets.chomp
 
 #user input for paisley preference
-puts "Do you like paisley"
+puts "Do you like paisley?"
 applicant[:likes_paisley] = gets.chomp
 
 #user input for chevrons
-puts "Do you like chevrons"
+puts "Do you like chevrons?"
 applicant[:likes_chevrons] = gets.chomp
 
 #user input for photorealistic
-puts "Do you like likes photorealistic woods"
+puts "Do you like likes photorealistic woods?"
 applicant[:likes_photorealistic_woods] = gets.chomp
 
 #user input for abstract woods
-puts "Do you like abstract woods"
+puts "Do you like abstract woods?"
 applicant[:likes_abstract_woods] = gets.chomp
 
 =begin
   asks user for input to update 
   any information of their application
+  use an until loop to satisfy valid_input
 =end
 
 valid_input = false
@@ -91,6 +92,7 @@ until valid_input
     puts "Type done if finished updating"
   else
     puts "Im sorry yes or no."
+    puts
   end
 
 end
