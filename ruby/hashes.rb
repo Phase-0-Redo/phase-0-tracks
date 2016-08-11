@@ -23,6 +23,10 @@ applicant[:email] = gets.chomp
 puts "What's your phone number?"
 applicant[:phone] = gets.chomp
 
+puts "What is your favorite shade of blue?"
+applicant[:fave_blue] = gets.chomp
+
+
 
 
 
