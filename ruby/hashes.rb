@@ -26,6 +26,9 @@ applicant[:phone] = gets.chomp
 puts "What is your favorite shade of blue?"
 applicant[:fave_blue] = gets.chomp
 
+puts "Do you like paisley"
+applicant[:likes_paisley] = gets.chomp
+
 
 
 
