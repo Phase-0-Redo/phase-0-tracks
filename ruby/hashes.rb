@@ -20,3 +20,5 @@ applicant[:address] = gets.chomp
 puts "What's your email?"
 applicant[:email] = gets.chomp
 
+puts "What's your phone number?"
+applicant[:phone] = gets.chomp
