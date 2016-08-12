@@ -12,7 +12,24 @@ starbucks = {
       blonde: "Veranda", 
       bold: "Verona", 
       decaf: "Decaf Sumatra"
+    },
+
+    drive_thru_queue:{
+      car_1: {
+        order: {
+          drink: "Iced Caramel Macchiatto",
+          food: "Chocolate croissant"
+        }
+      },
+      car_2: {
+        order: {
+          drink: "Venti Pike",
+          food: nil
+        }
+      }
     }
+    
+
   },
 
   mission_and_el_camino: {
