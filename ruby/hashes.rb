@@ -22,12 +22,12 @@ puts
 
 #user input for key age
 puts "How old are you?"
-applicant[:age] = gets.chomp
+applicant[:age] = gets.chomp.to_i
 puts
 
 #user input for key children
 puts "How many kids do you have? If none type 0"
-applicant[:children] = gets.chomp
+applicant[:children] = gets.chomp.to_i
 puts 
 
 #user input for key address
@@ -66,7 +66,7 @@ paisley = gets.chomp.downcase
 puts
 
 #user input for chevrons
-puts "Do you like chevrons?"
+puts "Do you like chevrons? yes or no"
 chevrons = gets.chomp.downcase
   if chevrons == "yes"
     applicant[:likes_chevrons] = true
@@ -76,7 +76,7 @@ chevrons = gets.chomp.downcase
 puts
 
 #user input for photorealistic
-puts "Do you like likes photorealistic woods?"
+puts "Do you like likes photorealistic woods? yes or no"
 photorealistic = gets.chomp.downcase
   if photorealistic == "yes"
     applicant[:likes_photorealistic_woods] = true
@@ -86,7 +86,7 @@ photorealistic = gets.chomp.downcase
 puts
 
 #user input for abstract woods
-puts "Do you like abstract woods?"
+puts "Do you like abstract woods? yes or no"
 abstract = gets.chomp.downcase
   if abstract == "yes"
     applicant[:likes_abstract_woods] = true
@@ -146,3 +146,5 @@ until valid_input
 end
 
 p applicant[:age].class
+p applicant[:children].class
+
