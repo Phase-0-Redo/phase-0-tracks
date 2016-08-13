@@ -11,22 +11,29 @@ to the next vowel in 'aeiou',
   would become 'f'
 =end
 
-#Swap first and last name.
+#S wap first and last name.
 def name_swapper(first, last)
   p last +" "+ first
 end
 
+=begin
+changes all the letters, 
+all vowels to the next vowel
+all consonants to the next consonant
+=end
 
 def name_changer(name)
-  #name_length = name.length
-  
-  #name_arr.each {|x| p name_arr[x] }
-  #counter = 0
-  #letters = "bcdfghjklmnpqrstvwxyz"
-  #vowels = "aeiou"
+  name_length = name.length
+  counter = 0
+  letters = "bcdfghjklmnpqrstvwxyz"
+  vowels = "aeiou"
+  new_name = ""
   name_arr = name.split("")
-  name_arr.map! {|letter| letter.next}
+  name_arr.map! do |letter| 
+    letter.next
+  end 
+  name_arr.replace("aa")
   p name_arr
 end
 
-name_changer("jordan")
+p name_changer("buzz")
