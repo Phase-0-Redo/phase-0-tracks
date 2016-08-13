@@ -18,16 +18,15 @@ end
 
 
 def name_changer(name)
-  name_length = name.length
-  name_arr = name.split
-  #name_arr.each {|x| p name_arr[x] }
-  counter = 0
-  letters = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-  vowels = ["a","e","i","o","u"]
-  x = ""
-  while counter < name_length
-    if name[counter]
+  #name_length = name.length
   
+  #name_arr.each {|x| p name_arr[x] }
+  #counter = 0
+  #letters = "bcdfghjklmnpqrstvwxyz"
+  #vowels = "aeiou"
+  name_arr = name.split("")
+  name_arr.map! {|letter| letter.next}
+  p name_arr
 end
 
 name_changer("jordan")
