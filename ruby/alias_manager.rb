@@ -13,7 +13,7 @@ to the next vowel in 'aeiou',
 
 # Swap first and last name.
 def name_swapper(first, last)
-  p last +" "+ first
+  last +" "+ first
 end
 
 =begin
@@ -46,25 +46,32 @@ def name_changer(name)
          vowels[vowels.index(letter) + 1]
       elsif consonants.include?(letter) 
          consonants[consonants.index(letter) + 1]
-      
+      elsif letter == "z"
+        letter = "b"
+      elsif letter == "u"
+        letter = "a"
       end
     end
   new_name = name_arr.join
-  p new_name
+  new_name
 end
 
 
 puts "Whats your name?"
 first_name = gets.chomp
+new_first = name_changer("#{first_name}")
+puts "Your civilian name #{first_name} is now #{new_first}."
+puts
 
 puts "Whats your last name?"
 last_name = gets.chomp
-
-new_first = name_changer("#{first_name}")
 new_last = name_changer("#{last_name}")
+puts "Your civilian last name #{last_name} is now #{new_last}."
+puts
 
-name_swapper("#{new_first}", "#{new_last}")
+old_full = first_name + " " + last_name
+new_full = name_swapper("#{new_first}", "#{new_last}")
 
-
-
+p old_full
+p new_full
 
