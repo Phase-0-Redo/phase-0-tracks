@@ -55,8 +55,16 @@ end
 
 
 puts "Whats your name?"
-name = gets.chomp
+first_name = gets.chomp
+
+puts "Whats your last name?"
+last_name = gets.chomp
+
+new_first = name_changer("#{first_name}")
+new_last = name_changer("#{last_name}")
+
+name_swapper("#{new_first}", "#{new_last}")
 
 
 
-name_changer("#{name}")
+
