@@ -23,8 +23,8 @@ class Bobolink
   def design
     puts "I can design a name. Give me a name"
     name = gets.chomp
-    name.reverse.upcase
-    puts "Presenting the newly designed #{name}"
+    new_name = name.reverse.upcase
+    puts "Presenting the newly designed #{new_name}"
   end
 
   def sleep
@@ -35,6 +35,13 @@ class Bobolink
   end
 
   def code
-    
+    puts "I'VE CRACKED IT. I'M IN"
   end
+
+end
+
+jordan = Bobolink.new
+jordan.design
+jordan.sleep
+jordan.code
 
