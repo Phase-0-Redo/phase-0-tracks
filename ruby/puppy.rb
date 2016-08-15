@@ -31,7 +31,7 @@ class Bobolink
     puts "I need some sleep."
     puts "How long should I sleep for?"
     sleep = gets.to_i
-    puts "zzzz" * sleep
+    puts "zzzz\n" * sleep
   end
 
   def code
