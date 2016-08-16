@@ -1,4 +1,4 @@
-
+require 'pp'
 class Santa
   def initialize(gender, ethnicity)
     p "Initializing Santa instance...."
@@ -28,15 +28,16 @@ class Santa
   # changes array reindeer_ranking from most preferred to least into a hash
   def ranking
     reindeer_hash = {}
-    puts "Please rank reindeer with \n numerical value 9 to 1\n 9 being most favorite\n 1 being least."
+    puts "Please rank reindeer with \n numerical value 1 to 9\n 1 being most favorite\n 9 being least."
     @reindeer_ranking.each do |reindeer|
       p reindeer
       reindeer_hash[reindeer] = gets.to_i
     end
     @reindeer_ranking = reindeer_hash
-    p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
-    p @reindeer_ranking.sort_by {|key, value| value }
-    p @reindeer_ranking  
+    p "#{@name} Your favorite reindeer is #{@reindeer_ranking.key(9)}"
+    ranking_array = @reindeer_ranking.sort_by {|key, value| value }
+    pp ranking_array
+    pp @reindeer_ranking  
   end
 end
 
