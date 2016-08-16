@@ -37,7 +37,8 @@ class Santa
     
     
     p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
-    p @reindeer_ranking.sort_by {|key, value| value }
+    ranking_array = @reindeer_ranking.sort_by {|key, value| value }
+    p ranking_array
     p @reindeer_ranking  
   end
 end
