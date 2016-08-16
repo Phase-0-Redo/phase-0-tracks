@@ -1,3 +1,5 @@
+require 'pp'
+
 class Puppy
   def initialize
     puts "initializing new puppy instance"
@@ -43,21 +45,29 @@ end
 
 
 
-spot = Puppy.new
-spot.fetch("ball")
-spot.speak(5)
-spot.rollover
-spot.dog_years(3)
-spot.favorite_food("chicken")
-
-hello = Kitty.new
-hello.purr
-hello.cat_years(2)
-
+#spot = Puppy.new
+#spot.fetch("ball")
+#spot.speak(5)
+#spot.rollover
+#spot.dog_years(3)
+#spot.favorite_food("chicken")
+#
+#hello = Kitty.new
+#hello.purr
+#hello.cat_years(2)
+kitty_array = []
 x = 0
 i = 50
+
 while x < i
-  Kitty.new 
+  kitty_array << Kitty.new 
   puts "new instance #{x}"
   x += 1
+end
+
+pp kitty_array
+
+kitty_array.each do |instance|
+  instance.purr
+  instance.cat_years(2)
 end
