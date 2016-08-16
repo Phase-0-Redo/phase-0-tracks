@@ -34,8 +34,6 @@ class Santa
       reindeer_hash[reindeer] = gets.to_i
     end
     @reindeer_ranking = reindeer_hash
-    
-    
     p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
     p @reindeer_ranking.sort_by {|key, value| value }
     p @reindeer_ranking  
