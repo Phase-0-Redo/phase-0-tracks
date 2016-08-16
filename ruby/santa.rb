@@ -33,8 +33,12 @@ class Santa
       p reindeer
       reindeer_hash[reindeer] = gets.to_i
     end
-    reindeer_ranking = reindeer_hash
-    p reindeer_ranking
+    @reindeer_ranking = reindeer_hash
+    
+    
+    p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
+    p @reindeer_ranking.sort_by {|key, value| value }
+    p @reindeer_ranking  
   end
 end
 
@@ -43,4 +47,4 @@ jordan.get_name
 jordan.speak
 jordan.eat_milk_and_cookies("brookie")
 jordan.ranking
-p reindeer_ranking
+
