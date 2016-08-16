@@ -28,7 +28,7 @@ class Santa
   # changes array reindeer_ranking from most preferred to least into a hash
   def ranking
     reindeer_hash = {}
-    puts "Please rank reindeer with numerical value from most favorite to least."
+    puts "Please rank reindeer with \n numerical value 9 to 1\n 9 being most favorite\n 1 being least."
     @reindeer_ranking.each do |reindeer|
       p reindeer
       reindeer_hash[reindeer] = gets.to_i
@@ -43,3 +43,4 @@ jordan.get_name
 jordan.speak
 jordan.eat_milk_and_cookies("brookie")
 jordan.ranking
+p reindeer_ranking
