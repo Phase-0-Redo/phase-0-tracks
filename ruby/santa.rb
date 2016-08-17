@@ -2,14 +2,12 @@ require 'pp'
 class Santa
   def initialize(gender, ethnicity)
     p "Initializing Santa instance...."
-    @name = nil
     @location = "Home"
     @gender = gender
     @ethnicity = ethnicity
-    @age = 0
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   end
-
+  @age = 0
+  @age = 0
   #sets value of @name
   def get_name
     puts "Whats your name?"
@@ -24,7 +22,7 @@ class Santa
     p "#{@name} said hat was a good #{cookie}"
   end
 
-
+  @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   # changes array reindeer_ranking from most preferred to least into a hash
   def ranking
     reindeer_hash = {}
@@ -58,14 +56,17 @@ santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+#santas = []
+#santas << Santa.new("agender", "black")
+#santas << Santa.new("female", "Latino")
+#santas << Santa.new("bigender", "white")
+#santas << Santa.new("male", "Japanese")
+#santas << Santa.new("female", "prefer not to say")
+#santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+#santas << Santa.new("N/A", "N/A")
 
-p santas[1]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[Random.rand(example_genders.length + 1)], example_ethnicities[Random.rand(example_ethnicities.length + 1)])
+end
 
+pp santas
