@@ -37,7 +37,6 @@ class Santa
     end
     reindeer_hash
     @reindeer_ranking = reindeer_hash
-<<<<<<< HEAD
     p "#{@name} Your favorite reindeer is #{@reindeer_ranking.key(1)}"
     reindeer_hash.sort_by {|key, value| value }
     @reindeer_ranking = reindeer_hash
@@ -53,14 +52,20 @@ class Santa
   def age
     puts "#{@name} how old are you?"
     @age = gets.to_i
-=======
-    
-    
-    p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
-    ranking_array = @reindeer_ranking.sort_by {|key, value| value }
-    p ranking_array
-    p @reindeer_ranking  
->>>>>>> master
+  end
+
+  def celebrate_birthday
+    @age + 1
+  end
+
+  def get_mad_at
+    puts "Who's in trouble?"
+    reindeer = gets.chomp
+    @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking << reindeer
+
+    #@reindeer_ranking.rotate(@reindeer_ranking.index(reindeer))
+    p @reindeer_ranking
   end
 end
 
@@ -71,7 +76,7 @@ jordan = Santa.new("male", "wookie")
 jordan.ranking
 #jordan.age
 
-p jordan
+jordan.get_mad_at
 
 #santas = []
 #example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
