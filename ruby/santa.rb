@@ -37,6 +37,7 @@ class Santa
     end
     reindeer_hash
     @reindeer_ranking = reindeer_hash
+<<<<<<< HEAD
     p "#{@name} Your favorite reindeer is #{@reindeer_ranking.key(1)}"
     reindeer_hash.sort_by {|key, value| value }
     @reindeer_ranking = reindeer_hash
@@ -52,6 +53,14 @@ class Santa
   def age
     puts "#{@name} how old are you?"
     @age = gets.to_i
+=======
+    
+    
+    p "Your favorite reindeer is #{@reindeer_ranking.key(9)}"
+    ranking_array = @reindeer_ranking.sort_by {|key, value| value }
+    p ranking_array
+    p @reindeer_ranking  
+>>>>>>> master
   end
 end
 
