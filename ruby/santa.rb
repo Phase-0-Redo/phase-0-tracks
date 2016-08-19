@@ -1,5 +1,7 @@
 require 'pp'
 class Santa
+  attr_reader :location
+  attr_writer :age, :name, :gender, :ethnicity
   def initialize(gender, ethnicity)
     p "Initializing Santa instance...."
     @gender = gender
@@ -17,31 +19,10 @@ class Santa
     @name = gets.chomp
   end
 
-  def gender
-    @gender
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-   #getter methods for attributes
+  #getter methods for attributes
   def age
     puts "#{@name} how old are you?"
     @age = gets.to_i
-  end
-
-  #setter methods for attributes
-  def name=(new_name)
-    @name = new_name
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def ethnicity
-    @ethnicity
   end
 
   def celebrate_birthday
@@ -97,9 +78,11 @@ jordan = Santa.new("male", "wookie")
 #jordan.ranking
 jordan.age
 jordan.get_mad_at
-jordan.gender
-jordan.ethnicity
+jordan.gender = "anti-gender"
+jordan.ethnicity = "mohican"
 jordan.celebrate_birthday
+pp jordan
+
 
 
 #santas = []
