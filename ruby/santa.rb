@@ -59,26 +59,24 @@ class Santa
   end
 
   def get_mad_at
-    puts "Which reindeer is in trouble?"
-    reindeer = gets.chomp.capitalize!
+    #puts "Which reindeer is in trouble?"
+    #reindeer = gets.chomp.capitalize!
 
     #@reindeer_ranking.include?(reindeer) = false
     valid_input = false
     until valid_input == true  
-      if @reindeer_ranking.include?(reindeer) == false
-      puts "Sorry one of Santa's known reindeers."
-      valid_input = false
-    else @reindeer_ranking.include?(reindeer) == true
-      @reindeer_ranking.delete(reindeer)
-      @reindeer_ranking << reindeer
-      #@reindeer_ranking.include?(reindeer) = false
-      valid_input = true
+      puts "Which reindeer is in trouble?"
+      reindeer = gets.chomp.capitalize!
+        if @reindeer_ranking.include?(reindeer) == false
+          puts "Sorry one of Santa's known reindeers."
+          
+        elsif @reindeer_ranking.include?(reindeer) == true
+          @reindeer_ranking.delete(reindeer)
+          @reindeer_ranking << reindeer
+        #@reindeer_ranking.include?(reindeer) = false
+          valid_input = true
+        end
     end
-    end
-
-
-    #@reindeer_ranking.delete(reindeer)
-    #@reindeer_ranking << reindeer
     p @reindeer_ranking
   end
 end
