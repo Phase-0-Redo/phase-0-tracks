@@ -17,6 +17,14 @@ class Santa
     @name = gets.chomp
   end
 
+  def gender
+    @gender
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
   def speak
     p "Ho, ho, ho! Happy holidays"
   end
@@ -55,12 +63,13 @@ class Santa
   end
 
   def celebrate_birthday
-    @age + 1
+     @age = @age + 1
+    p @age
   end
 
   def get_mad_at
     puts "Who's in trouble?"
-    reindeer = gets.chomp
+    reindeer = gets.chomp.capitalize!
     @reindeer_ranking.delete(reindeer)
     @reindeer_ranking << reindeer
 
@@ -73,10 +82,13 @@ jordan = Santa.new("male", "wookie")
 #jordan.get_name
 #jordan.speak
 #jordan.eat_milk_and_cookies("brookie")
-jordan.ranking
-#jordan.age
-
+#jordan.ranking
+jordan.age
 jordan.get_mad_at
+jordan.gender
+jordan.ethnicity
+jordan.celebrate_birthday
+
 
 #santas = []
 #example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
