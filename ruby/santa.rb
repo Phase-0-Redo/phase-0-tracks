@@ -25,6 +25,29 @@ class Santa
     @ethnicity
   end
 
+   #getter methods for attributes
+  def age
+    puts "#{@name} how old are you?"
+    @age = gets.to_i
+  end
+
+  #setter methods for attributes
+  def name=(new_name)
+    @name = new_name
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  def celebrate_birthday
+    p @age + 1
+  end
+
   def speak
     p "Ho, ho, ho! Happy holidays"
   end
@@ -54,17 +77,6 @@ class Santa
       reindeer_arr.insert(value - 1, key)
     end
     @reindeer_ranking = reindeer_arr.compact!
-  end
-
-
-  def age
-    puts "#{@name} how old are you?"
-    @age = gets.to_i
-  end
-
-  def celebrate_birthday
-     @age = @age + 1
-    p @age
   end
 
   def get_mad_at
