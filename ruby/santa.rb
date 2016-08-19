@@ -1,7 +1,7 @@
 require 'pp'
 class Santa
-  attr_reader :location
-  attr_writer :age, :name, :gender, :ethnicity
+  attr_reader :location, :name
+  attr_writer :age, :gender, :ethnicity
   def initialize(gender, ethnicity)
     p "Initializing Santa instance...."
     @gender = gender
@@ -19,7 +19,7 @@ class Santa
     @name = gets.chomp
   end
 
-  #getter methods for attributes
+  
   def age
     puts "#{@name} how old are you?"
     @age = gets.to_i
@@ -36,17 +36,15 @@ class Santa
   def eat_milk_and_cookies(cookie)
     p "#{@name} said hat was a good #{cookie}"
   end
-
-  #@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
  
   # changes array reindeer_ranking from most preferred to least into a hash
   def ranking
     reindeer_hash = {}
     puts "Please rank reindeer with \n numerical value 1 to 9\n 1 being most favorite\n 9 being least."
-    @reindeer_ranking.each do |reindeer|
-      p reindeer
-      reindeer_hash[reindeer] = gets.to_i
-    end
+      @reindeer_ranking.each do |reindeer|
+        p reindeer
+        reindeer_hash[reindeer] = gets.to_i
+      end
     reindeer_hash
     @reindeer_ranking = reindeer_hash
     p "#{@name} Your favorite reindeer is #{@reindeer_ranking.key(1)}"
@@ -54,19 +52,33 @@ class Santa
     @reindeer_ranking = reindeer_hash
     pp @reindeer_ranking  
     reindeer_arr = []
-    @reindeer_ranking.each do |key, value|
-      reindeer_arr.insert(value - 1, key)
-    end
+      @reindeer_ranking.each do |key, value|
+        reindeer_arr.insert(value - 1, key)
+      end
     @reindeer_ranking = reindeer_arr.compact!
   end
 
   def get_mad_at
-    puts "Who's in trouble?"
+    puts "Which reindeer is in trouble?"
     reindeer = gets.chomp.capitalize!
-    @reindeer_ranking.delete(reindeer)
-    @reindeer_ranking << reindeer
 
-    #@reindeer_ranking.rotate(@reindeer_ranking.index(reindeer))
+    #@reindeer_ranking.include?(reindeer) = false
+    valid_input = false
+    until valid_input == true  
+      if @reindeer_ranking.include?(reindeer) == false
+      puts "Sorry one of Santa's known reindeers."
+      valid_input = false
+    else @reindeer_ranking.include?(reindeer) == true
+      @reindeer_ranking.delete(reindeer)
+      @reindeer_ranking << reindeer
+      #@reindeer_ranking.include?(reindeer) = false
+      valid_input = true
+    end
+    end
+
+
+    #@reindeer_ranking.delete(reindeer)
+    #@reindeer_ranking << reindeer
     p @reindeer_ranking
   end
 end
@@ -77,10 +89,12 @@ jordan = Santa.new("male", "wookie")
 #jordan.eat_milk_and_cookies("brookie")
 #jordan.ranking
 jordan.age
+jordan.name
 jordan.get_mad_at
 jordan.gender = "anti-gender"
 jordan.ethnicity = "mohican"
 jordan.celebrate_birthday
+jordan.age = 79
 pp jordan
 
 
