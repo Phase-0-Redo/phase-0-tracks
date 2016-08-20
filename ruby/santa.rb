@@ -1,14 +1,15 @@
 require 'pp'
 class Santa
   attr_reader :location, :name
-  attr_writer :age, :gender, :ethnicity
+  attr_writer :age, :gender, :ethnicity, :position
   def initialize(gender, ethnicity)
     p "Initializing Santa instance...."
     @gender = gender
     @ethnicity = ethnicity
+    @position = 
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   end
-  @position = 0
+  
   @age = 0
   @name = ''
   @location = "Home"
@@ -17,30 +18,35 @@ class Santa
   def get_name
     puts "Whats your name?"
     @name = gets.chomp
+    puts
   end
 
   def age
     puts "#{@name} how old are you?"
     @age = gets.to_i
+    puts
   end
 
   def celebrate_birthday
     p @age + 1
+    puts
   end
 
   def speak
     p "Ho, ho, ho! Happy holidays"
+    puts
   end
 
   def eat_milk_and_cookies(cookie)
     p "#{@name} said hat was a good #{cookie}"
+    puts
   end
  
   # changes array reindeer_ranking from most preferred to least into a hash
   def ranking
     reindeer_hash = {}
     reindeer_arr = []
-    puts "Please rank reindeer with \n numerical value 1 to 9\n 1 being most favorite\n 9 being least."
+    puts "Please rank reindeer with \n numerical value 1 to 9\n 1 being most favorite\n 9 being least.\n"
       @reindeer_ranking.each do |reindeer|
         p reindeer
         reindeer_hash[reindeer] = gets.to_i
@@ -52,6 +58,7 @@ class Santa
         reindeer_arr.insert(value - 1, key)
       end
     @reindeer_ranking = reindeer_arr.compact!
+    puts
   end
 
   def get_mad_at
@@ -68,33 +75,41 @@ class Santa
         end
     end
     p @reindeer_ranking
+    puts
   end
+  puts
 end
 
 def multiply(x,y)
   x * y
 end
 
-jordan = Santa.new("male", "wookie")
+def new_age
+  new_age = (1..140).to_a
+  @age = new_age.sample
+end
+
+#jordan = Santa.new("male", "wookie")
 #jordan.get_name
 #jordan.speak
 #jordan.eat_milk_and_cookies("brookie")
-jordan.ranking
-jordan.age
-jordan.name
-jordan.get_mad_at
-jordan.gender = "anti-gender"
-jordan.ethnicity = "mohican"
-jordan.celebrate_birthday
-jordan.age = 79
-jordan.gender = "stormtrooper"
-pp jordan
+#jordan.ranking
+#jordan.age
+#jordan.name
+#jordan.get_mad_at
+#jordan.gender = "anti-gender"
+#jordan.ethnicity = "mohican"
+#jordan.celebrate_birthday
+#jordan.age = "#{new_age}"
+#jordan.gender = "stormtrooper"
+#
+#pp jordan
 
 
 
 santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders = ["agender", "bigender", "cis", "female", "gender fluid", "male", "neither", "pangender", "transgender", "N/A"]
+example_ethnicities = ["black", "latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "wookie", "sith", "antarctican", "Japanese-Norwegian", "N/A"]
 
 counter = 0
 random_gender_integer = Random.rand(1..example_genders.length) 
@@ -107,13 +122,16 @@ random_integer = multiply(random_gender_integer, random_ethnicities_integer)
 #  counter += 1
 #end
 
-until counter == random_integer
+until counter == 30
+
   santas << Santa.new(example_genders.sample, example_ethnicities.sample)
   puts "There are now #{santas.length}"
+  @position = "#{santas.length}"
+  p @position
   counter += 1
 end 
 
-#
+
 pp santas
 #p santas.length
 #puts "The counter length is #{counter}" 
