@@ -96,9 +96,10 @@ class Drink_order
 
   def hot_or_cold
     valid_input = false
-    puts "Is this going to be hot or cold?"
-    answer = gets.chomp.downcase
     until valid_input
+      puts "Is this going to be hot or cold?"
+    answer = gets.chomp.downcase
+    puts
       if answer == "hot"
         @iced = false
         valid_input = true
@@ -108,7 +109,7 @@ class Drink_order
         valid_input = true
         puts
       else
-        puts "That does  not compute. Hot or Iced?"
+        puts "That does not compute. Hot or Iced?"
         puts
       end
     end
@@ -131,11 +132,27 @@ class Drink_order
 
 end 
 
-order_1 = Drink_order.new
-order_1.name
-order_1.decaf
-order_1.size
-order_1.hot_or_cold
-order_1.shot_quantity
-p order_1
+def new_drink
+  drink = Drink_order.new
+  drink.name
+  drink.decaf
+  drink.size
+  drink.hot_or_cold
+  drink.shot_quantity
+  p drink
+end
+
+#order_1 = Drink_order.new
+#order_1.name
+#order_1.decaf
+#order_1.size
+#order_1.hot_or_cold
+#order_1.shot_quantity
+#p order_1
+
+valid_input = false
+
+new_drink
+
+
 
