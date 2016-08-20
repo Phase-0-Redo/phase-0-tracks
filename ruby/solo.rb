@@ -98,11 +98,28 @@ class Drink_order
     end
   end
 
+  def hot_or_cold
+    valid_input = false
+    puts "Is this going to be hot or cold?"
+    answer = gets.chomp.downcase
+    until valid_input
+      if answer == "hot"
+        @iced = false
+        valid_input = true
+      elsif answer == "cold"
+        @iced = true
+        valid_input = true
+      else
+        puts "That does  not compute. Hot or Iced?"
+      end
+    end
+  end
 end 
 
 order_1 = Drink_order.new
 order_1.name
-order_1.decaf
-order_1.size
+#order_1.decaf
+#order_1.size
+order_1.hot_or_cold
 p order_1
 
