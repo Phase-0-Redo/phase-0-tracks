@@ -26,16 +26,50 @@ possible methods
   custom => ask for custom inputs
 =end
 
-class Drink
-  attr_reader :name, :decaf,
-  attr_accessor :size, :iced, :number_of_shots, 
+class Drink_order
+  attr_reader :name, :decaf
+  attr_accessor :size, :iced, :number_of_shots 
 
-  def initialize(name)
+  def initialize
     puts "Making drink..."
-    @name = name
+    @name = ""
+    @decaf = false
+    puts
   end
 
   def name
     puts "Hi I'm robobarista Hal 9000.\n Can I get your name?\n"
     @name = gets.chomp
+    puts
   end
+
+  def decaf
+    valid_input = false
+    until valid_input
+    puts "#{@name} you seem tired. Is that true? yes or no?"
+      answer = gets.chomp.downcase
+      if answer == "yes"
+        puts
+        puts "No, decaf for you."
+        @decaf = false
+        valid_input = true
+      elsif answer == "no"
+        puts
+        puts "Come on, embrace the dark side."
+        @decaf = true
+        valid_input = true
+      else
+        puts "I'm sorry, I have not had my coffee this morning\n one more time please.\n"
+      end
+    end
+    puts
+  end
+  
+
+end
+
+order_1 = Drink_order.new
+order_1.name
+order_1.decaf
+p order_1
+
