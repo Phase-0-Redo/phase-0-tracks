@@ -150,9 +150,24 @@ end
 #order_1.shot_quantity
 #p order_1
 
+drink_queue = []
 valid_input = false
 
-new_drink
+until valid_input
+  puts "Can I get an order started for you?\n Or type done, when ready."
+    answer = gets.chomp
+    if answer == "yes"
+      drink_queue << new_drink
+    elsif answer == "no"
+      puts "Maybe another time."
+      valid_input = true
+    elsif answer == "done"
+      valid_input = true
+    end
+end
+   
+pp drink_queue   
+
 
 
 
