@@ -28,7 +28,7 @@ possible methods
 require 'pp'
 class Drink_order
   attr_reader :name, :decaf
-  attr_accessor :drink_size, :iced, :number_of_shots, :cup_sizes 
+  attr_accessor :drink_size, :iced, :number_of_shots
 
   def initialize
     puts "Making drink..."
@@ -38,11 +38,8 @@ class Drink_order
     puts
   end
 
-  
-  
-
   def name
-    puts "Hi I'm robobarista Hal 9000.\n Can I get your name?\n"
+    puts "Hi I'm robobarista Hal 9000.\n What is your name?\n"
     @name = gets.chomp
     puts
   end
@@ -50,25 +47,24 @@ class Drink_order
   def decaf
     valid_input = false
     until valid_input
-    puts "#{@name} you seem tired. Is that true? yes or no?"
+    puts "#{@name} you seem tired. Is that true? yes or no"
       answer = gets.chomp.downcase
       puts
       if answer == "yes"
-        puts
         puts "No, decaf for you."
         @decaf = false
         valid_input = true
-      elsif answer == "no"
         puts
+      elsif answer == "no"
         puts "Come on, embrace the dark side."
         @decaf = true
         valid_input = true
+        puts
       else
         puts "I'm sorry, I have not had my coffee\n one more time please.\n"
         puts
       end
     end
-    puts
   end
 
   def size
@@ -106,20 +102,40 @@ class Drink_order
       if answer == "hot"
         @iced = false
         valid_input = true
+        puts
       elsif answer == "cold"
         @iced = true
         valid_input = true
+        puts
       else
         puts "That does  not compute. Hot or Iced?"
+        puts
       end
     end
   end
+
+  def shot_quantity
+    puts "How many shots would you like today?"
+    answer = gets.to_i
+    puts
+      if answer < 8
+        puts "Shots.Shot.Shot.Shot.\n" * answer
+        @number_of_shots = answer
+        puts
+      elsif answer >= 8
+        puts "You may want to consult a physician\nbut okay."
+        @number_of_shots = answer
+        puts
+      end
+  end
+
 end 
 
 order_1 = Drink_order.new
 order_1.name
-#order_1.decaf
-#order_1.size
+order_1.decaf
+order_1.size
 order_1.hot_or_cold
+order_1.shot_quantity
 p order_1
 
