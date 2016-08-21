@@ -26,15 +26,14 @@ possible methods
   custom => ask for custom inputs
 =end
 require 'pp'
-class Drink_order
+class Drink
   attr_reader :name, :decaf
   attr_accessor :drink_size, :iced, :number_of_shots
 
   def initialize
-    puts "Making drink..."
+    puts "Warming up robobarista..."
     @name = ""
     @decaf = false
-   
     puts
   end
 
@@ -99,7 +98,6 @@ class Drink_order
     until valid_input
       puts "Is this going to be hot or cold?"
     answer = gets.chomp.downcase
-    puts
       if answer == "hot"
         @iced = false
         valid_input = true
@@ -130,19 +128,39 @@ class Drink_order
       end
   end
 
+  def printout(name, temp, decaf)
+    name = @name 
+    temp = @iced
+    decaf = @decaf
+    puts "#{@name} I have your drink."
+      if @iced == true
+        puts "It's something cold."
+      elsif @iced == false
+        puts "It's something hot."
+      end
+
+      if temp || decaf
+        puts "#{@name} you might be a vampire"
+      else 
+        puts " #{@name} you might be a werewolf"
+      end
+     puts 
+  end
+
 end 
 
 def new_drink
-  drink = Drink_order.new
+  drink = Drink.new
   drink.name
   drink.decaf
   drink.size
   drink.hot_or_cold
   drink.shot_quantity
+  drink.printout(@name, @iced, @decaf)
   p drink
 end
 
-#order_1 = Drink_order.new
+#order_1 = Drink.new
 #order_1.name
 #order_1.decaf
 #order_1.size
@@ -154,15 +172,18 @@ drink_queue = []
 valid_input = false
 
 until valid_input
-  puts "Can I get an order started for you?\n Or type done, when ready."
-    answer = gets.chomp
+  puts "Can I get an order started for you?\nWhen done order type done, when ready."
+    answer = gets.chomp.downcase
+    puts
     if answer == "yes"
       drink_queue << new_drink
     elsif answer == "no"
       puts "Maybe another time."
       valid_input = true
+      puts
     elsif answer == "done"
       valid_input = true
+      puts
     end
 end
    
