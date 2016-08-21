@@ -62,7 +62,7 @@ class Drink
 
   def size
     cup_sizes = ["small", "medium", "large"]
-    not_size = ["tall", "grande", "venti"]
+    starbucks_size = ["tall", "grande", "venti"]
     valid_input = false
     until valid_input
         if @decaf == false
@@ -80,7 +80,7 @@ class Drink
       if cup_sizes.include?(answer)
         @drink_size = answer
         valid_input = true
-      elsif not_size.include?(answer)
+      elsif starbucks_size.include?(answer)
         puts "Where do you think you are starbucks?"
       else
         puts "I'm sorry I did not recognize that size."
@@ -119,6 +119,28 @@ class Drink
       end
   end
 
+  def determine_creature(temp, decaf, shots, size)
+    temp = @iced
+    decaf = @decaf
+    shots = @number_of_shots
+    size = @drink_size
+    if temp && decaf && shots == 0 && size == "small"
+      puts "#{@name} you might be a vampire."
+    elsif 
+      temp && decaf && shots > 0 && size == "medium"
+      puts "#{@name} you might be a ghost."
+    elsif 
+      temp && decaf && shots > 0 && size == "large"
+      puts "#{@name} you might be a yeti."
+    elsif
+      !temp && !decaf && shots > 0 
+      puts "#{@name} you might be a zombie"
+    else
+      puts "#{@name} you might be a human"
+    end
+  end
+      
+
   def printout(name, temp, decaf)
     name = @name 
     temp = @iced
@@ -129,7 +151,7 @@ class Drink
       elsif @iced == false
         puts "It's something hot."
       end
-      
+
   end
 end 
 
@@ -141,6 +163,7 @@ def new_drink
   drink.hot_or_cold
   drink.shot_quantity
   drink.printout(@name, @iced, @decaf)
+  drink.determine_creature(@iced, @decaf, @shot_quantity, @drink_size)
   drink
 end
 
