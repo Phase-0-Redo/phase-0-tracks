@@ -34,13 +34,11 @@ class Drink
     puts "Warming up robobarista..."
     @name = ""
     @decaf = false
-    puts
   end
 
   def name
     puts "Hi I'm robobarista Hal 9000.\n What is your name?\n"
     @name = gets.chomp
-    puts
   end
 
   def decaf
@@ -48,20 +46,16 @@ class Drink
     until valid_input
     puts "#{@name} you seem tired. Is that true? yes or no"
       answer = gets.chomp.downcase
-      puts
       if answer == "yes"
         puts "No, decaf for you."
         @decaf = false
         valid_input = true
-        puts
       elsif answer == "no"
         puts "Come on, embrace the dark side."
         @decaf = true
         valid_input = true
-        puts
       else
         puts "I'm sorry, I have not had my coffee\n one more time please.\n"
-        puts
       end
     end
   end
@@ -83,16 +77,13 @@ class Drink
           end
         end
       answer = gets.chomp
-      puts
       if cup_sizes.include?(answer)
         @drink_size = answer
         valid_input = true
       elsif not_size.include?(answer)
         puts "Where do you think you are starbucks?"
-        puts
       else
         puts "I'm sorry I did not recognize that size."
-        puts
       end
     end
   end
@@ -105,14 +96,11 @@ class Drink
       if answer == "hot"
         @iced = false
         valid_input = true
-        puts
       elsif answer == "cold"
         @iced = true
         valid_input = true
-        puts
       else
         puts "That does not compute. Hot or Iced?"
-        puts
       end
     end
   end
@@ -120,15 +108,14 @@ class Drink
   def shot_quantity
     puts "How many shots would you like today?"
     answer = gets.to_i
-    puts
       if answer < 8
-        puts "Shots.Shot.Shot.Shot.\n" * answer
+        puts "Shots...\n" * answer
         @number_of_shots = answer
-        puts
       elsif answer >= 8
         puts "You may want to consult a physician\nbut okay."
         @number_of_shots = answer
-        puts
+      else
+        puts "How many?"
       end
   end
 
@@ -142,9 +129,7 @@ class Drink
       elsif @iced == false
         puts "It's something hot."
       end
-     puts 
   end
-
 end 
 
 def new_drink
@@ -155,8 +140,6 @@ def new_drink
   drink.hot_or_cold
   drink.shot_quantity
   drink.printout(@name, @iced, @decaf)
-  p drink
-  puts
 end
 
 #order_1 = Drink.new
@@ -173,16 +156,13 @@ valid_input = false
 until valid_input
   puts "Can I get an order started for you?\nWhen done order type done, when ready."
     answer = gets.chomp.downcase
-    puts
     if answer == "yes"
       drink_queue << new_drink
     elsif answer == "no"
       puts "Maybe another time."
       valid_input = true
-      puts
     elsif answer == "done"
       valid_input = true
-      puts
     end
 end
    
