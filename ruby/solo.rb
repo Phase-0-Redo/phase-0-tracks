@@ -73,10 +73,14 @@ class Drink
     until valid_input
         if @decaf == false
           puts "#{@name}, how tired are you?"
-          pp cup_sizes
+          cup_sizes.each do |size|
+            p size
+          end
         elsif @decaf == true
           puts "#{@name}, how not tired are you?"
-          pp cup_sizes
+          cup_sizes.each do |size|
+            p size
+          end
         end
       answer = gets.chomp
       puts
@@ -138,12 +142,6 @@ class Drink
       elsif @iced == false
         puts "It's something hot."
       end
-
-      if temp || decaf
-        puts "#{@name} you might be a vampire"
-      else 
-        puts " #{@name} you might be a werewolf"
-      end
      puts 
   end
 
@@ -158,6 +156,7 @@ def new_drink
   drink.shot_quantity
   drink.printout(@name, @iced, @decaf)
   p drink
+  puts
 end
 
 #order_1 = Drink.new
@@ -187,7 +186,9 @@ until valid_input
     end
 end
    
-pp drink_queue   
+drink_queue.each do |instance|
+  p instance
+end   
 
 
 
