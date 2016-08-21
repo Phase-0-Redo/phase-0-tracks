@@ -129,6 +129,7 @@ class Drink
       elsif @iced == false
         puts "It's something hot."
       end
+      
   end
 end 
 
@@ -140,6 +141,7 @@ def new_drink
   drink.hot_or_cold
   drink.shot_quantity
   drink.printout(@name, @iced, @decaf)
+  drink
 end
 
 #order_1 = Drink.new
