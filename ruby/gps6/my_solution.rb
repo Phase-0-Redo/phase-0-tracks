@@ -111,6 +111,10 @@ Require relative takes in the data or code from
  It's a local version of require.
 Require loads the data from all different areas of Ruby.
 Ways to iterate through a hash are with .each, .each_pair, .reject, .select, .delete_if.
+The use of instance variables stood out in refactoring.
+Two concepts seemed to solidify more.
+ One was calling nested data especially when using an iteration.
+ The second was the use of instance variables within instance methods.
 =end
 
 
