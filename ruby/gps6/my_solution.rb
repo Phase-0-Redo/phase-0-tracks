@@ -20,14 +20,14 @@ class VirusPredictor
 
   # its calls other methods and passes back the results when virus effects
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
   # comparing the population density and calculate the number of deaths per state
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -46,7 +46,7 @@ class VirusPredictor
   end
 
   # compares pop density of state and creates a time frame 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -93,12 +93,25 @@ where we print out our pair of key and value,
 with our STATE as the key, info as our value
 =end
 STATE_DATA.each do |state, data|
-  state = VirusPredictor.new(state,data[:population_density], data[:population])
+  state = VirusPredictor.new(state, data[:population_density], data[:population])
   state.virus_effects
   
 end
 
-
+#REFLECTION
+=begin
+There is difference between the hash syntax
+ because the keys in STATE_DATA are strings. 
+Strings as keys require a hash rocket. 
+The values for each key are hashes. 
+Within each hash there is another key,
+ but this time it is a symbol and it uses colon.
+Require relative takes in the data or code from
+ a relative file and interpolates it into the file.
+ It's a local version of require.
+Require loads the data from all different areas of Ruby.
+Ways to iterate through a hash are with .each, .each_pair, .reject, .select, .delete_if.
+=end
 
 
 
