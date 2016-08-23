@@ -1,4 +1,4 @@
-// a function takes a string as a parameter 
+nod// a function takes a string as a parameter 
 //reverses the string
 function reverse(string){
   //splits the string into an array
