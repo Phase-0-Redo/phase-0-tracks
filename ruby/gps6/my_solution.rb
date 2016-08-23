@@ -52,15 +52,15 @@ class VirusPredictor
     speed = 0.0
 
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -75,15 +75,30 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+#alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+#alabama.virus_effects
+#
+#jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+#jersey.virus_effects
+#
+#california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+#california.virus_effects
+#
+#alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+#alaska.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+=begin
+run an iteration over STATE_DATA, 
+where we print out our pair of key and value, 
+with our STATE as the key, info as our value
+=end
+STATE_DATA.each do |state, data|
+  state = VirusPredictor.new(state,data[:population_density], data[:population])
+  state.virus_effects
+  
+end
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+
+
 
