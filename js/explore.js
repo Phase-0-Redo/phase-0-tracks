@@ -1,4 +1,4 @@
-nod// a function takes a string as a parameter 
+// a function takes a string as a parameter 
 //reverses the string
 function reverse(string){
   //splits the string into an array
@@ -14,13 +14,13 @@ function reverse(string){
 //var reverse_string = console.log(reverse("reverse"));
 
 //reverse("reverse");
-var y = reverse("reverse");
-y
+var rev_str = reverse("reverse");
+
 //console.log(reverse_string);
 //console.log(reverse_string);
 
 if (1 == 1){
-  y ;
+  rev_str ;
 } else {
   console.log("YUP");
 }
