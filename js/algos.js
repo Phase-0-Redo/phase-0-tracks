@@ -72,10 +72,10 @@ function randomWord(){
 //user input determines array length
 function randomTestData(integer){
   var arr = new Array(integer);
-  var data = randomWord().repeat(randomInteger);
+  
   //arr.fill(randomWord);
   //console.log(arr);
-  console.log(data);  
+  console.log(arr.length);  
 }
 
 
@@ -112,4 +112,3 @@ randomTestData(3);
 var we = [randomWord(), randomWord(), randomWord()];
 console.log(we);
 
-randomWord().repeat(randomInteger);
