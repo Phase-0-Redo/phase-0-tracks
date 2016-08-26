@@ -47,12 +47,22 @@ var stringSecond = propertySecond.toString();
 
 };
 
+function randomIntger(){
+  Math.floor((Math.random() * 10) + 1);
+};
+
+function randomWord(){
+  var word = ""
+  word
+};
+
 //Write a function that takes an integer for length,
 //builds and returns an array of strings of the given length
 
+//user input determines array length
 function randomTestData(integer){
   var arr = new Array(integer)
-  
+  arr.fil
   console.log(arr.length);  
 }
 
