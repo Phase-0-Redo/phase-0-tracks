@@ -36,8 +36,8 @@ var propertySecond = Object.getOwnPropertyNames(second);
 var stringFirst = propertyFirst.toString();
 var stringSecond = propertySecond.toString();
 
-console.log(stringFirst);
-console.log(stringSecond);
+//console.log(stringFirst);
+//console.log(stringSecond);
 
   if (stringFirst == stringSecond) {
     console.log("true");
@@ -47,7 +47,14 @@ console.log(stringSecond);
 
 };
 
+//Write a function that takes an integer for length,
+//builds and returns an array of strings of the given length
 
+function randomTestData(integer){
+  var arr = new Array(integer)
+  
+  console.log(arr.length);  
+}
 
 
 
@@ -66,15 +73,14 @@ var secondObject = {name: "Tamir", age: 54};
 var thirdObject = {first: "Steven", years: 54};
 var fourthObject = {name: "Steven", age: 54};
 
-
-
 compareTwo(firstObject, secondObject);
-compareTwo(firstObject, thirdObject);
-compareTwo(firstObject, fourthObject);
+//compareTwo(firstObject, thirdObject);
+//compareTwo(firstObject, fourthObject);
 
 //compareTwo(firstObject, thirdObject);
 //compareTwo(firstObject, fourthObject);
 
+randomTestData(3);
 
 
 
