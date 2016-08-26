@@ -1,15 +1,12 @@
 //function takes an array of words
 // returns the longest phrase
 
-
 //sorts through the array
 //organizes based on length
 //organizes based upon length
 //logs the longest
 
-
-
-//function accepts an array as a paramter 
+//function accepts an array as a parameter 
 //prints the longest item in the array
 function printer(array){
 
@@ -30,6 +27,30 @@ function printer(array){
 }
 
 
+//function takes two Objects and compares the key value pair
+function compareTwo(first, second){
+
+var propertyFirst = Object.getOwnPropertyNames(first);
+var propertySecond = Object.getOwnPropertyNames(second);
+
+var stringFirst = propertyFirst.toString();
+var stringSecond = propertySecond.toString();
+
+console.log(stringFirst);
+console.log(stringSecond);
+
+  if (stringFirst == stringSecond) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
+
+};
+
+
+
+
+
 //adds code for testing
 var words = ["long phrase","longest phrase","longer phrase"];
 words.unshift("even longer phrase");
@@ -38,4 +59,23 @@ words.push("phrase");
 
 //driver code for printer function
 console.log(printer(words));
+
+//sets up Objects
+var firstObject = {name: "Steven", age: 54};
+var secondObject = {name: "Tamir", age: 54};
+var thirdObject = {first: "Steven", years: 54};
+var fourthObject = {name: "Steven", age: 54};
+
+
+
+compareTwo(firstObject, secondObject);
+compareTwo(firstObject, thirdObject);
+compareTwo(firstObject, fourthObject);
+
+//compareTwo(firstObject, thirdObject);
+//compareTwo(firstObject, fourthObject);
+
+
+
+
 
