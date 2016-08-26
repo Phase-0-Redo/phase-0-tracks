@@ -47,13 +47,23 @@ var stringSecond = propertySecond.toString();
 
 };
 
-function randomIntger(){
-  Math.floor((Math.random() * 10) + 1);
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - 1 + min)) + min;
 };
 
 function randomWord(){
-  var word = ""
-  word
+  //var word = "";
+  //var letters = "abcdefghijklmnopqrstuvwxyz"
+
+  //return word;
+  var word = "";
+    
+    var letters = "abcdefghijklmnopqrstuvwxyz";
+    
+    for( var i=0; i <= randomInteger(1, 10); i++ )
+        word += letters.charAt(Math.floor(Math.random() * letters.length));
+        
+    return word;
 };
 
 //Write a function that takes an integer for length,
@@ -61,9 +71,11 @@ function randomWord(){
 
 //user input determines array length
 function randomTestData(integer){
-  var arr = new Array(integer)
-  arr.fil
-  console.log(arr.length);  
+  var arr = new Array(integer);
+  var data = randomWord().repeat(randomInteger);
+  //arr.fill(randomWord);
+  //console.log(arr);
+  console.log(data);  
 }
 
 
@@ -90,8 +102,14 @@ compareTwo(firstObject, secondObject);
 //compareTwo(firstObject, thirdObject);
 //compareTwo(firstObject, fourthObject);
 
+
+
+console.log(randomInteger(1, 10));
+console.log(randomWord());
+
 randomTestData(3);
 
+var we = [randomWord(), randomWord(), randomWord()];
+console.log(we);
 
-
-
+randomWord().repeat(randomInteger);
