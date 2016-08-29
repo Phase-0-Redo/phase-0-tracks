@@ -23,30 +23,30 @@ function printer(array){
   var longest = arr.shift()
 
   //returns the the variable longest
-  return longest;
+  console.log(longest);
 }
 
 
 //function takes two Objects and compares the key value pair
 function compareTwo(first, second){
 
-var propertyFirst = Object.getOwnPropertyNames(first);
-var propertySecond = Object.getOwnPropertyNames(second);
+  var propertyFirst = Object.getOwnPropertyNames(first);
+  var propertySecond = Object.getOwnPropertyNames(second);
 
-var stringFirst = propertyFirst.toString();
-var stringSecond = propertySecond.toString();
+  var stringFirst = propertyFirst.toString();
+  var stringSecond = propertySecond.toString();
 
-//console.log(stringFirst);
-//console.log(stringSecond);
+  //console.log(stringFirst);
+  //console.log(stringSecond);
 
   if (stringFirst == stringSecond) {
     console.log("true");
   } else {
     console.log("false");
   }
-
 };
 
+//function to create a random integer ranging from 1 - 10
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - 1 + min)) + min;
 };
@@ -55,14 +55,19 @@ function randomWord(){
   //var word = "";
   //var letters = "abcdefghijklmnopqrstuvwxyz"
 
-  //return word;
+  //starts off as an empty string;
   var word = "";
+  
+  //sets up variable for finding a letter  
+  var letters = "abcdefghijklmnopqrstuvwxyz";
     
-    var letters = "abcdefghijklmnopqrstuvwxyz";
-    
+    //for loop that counts up to an integer, counts up by one
     for( var i=0; i <= randomInteger(1, 10); i++ )
-        word += letters.charAt(Math.floor(Math.random() * letters.length));
-        
+        //word += letters.charAt(Math.floor(Math.random() * letters.length));
+        //adds to var word with a string at random index from 0 to length of var letters
+        word += letters.charAt(randomInteger(0, letters.length));
+    
+    //returns the word    
     return word;
 };
 
@@ -71,14 +76,20 @@ function randomWord(){
 
 //user input determines array length
 function randomTestData(integer){
-  var arr = new Array(integer);
-  
+
+  //creates new array
+  var arr = new Array();
+
+  //for loop counts up until it reaches the integer inputted, counts up by one
+  for(var i=0; i < integer; i++)
+    //each time it push a random word into the arr
+    arr.push(randomWord());
   //arr.fill(randomWord);
   //console.log(arr);
-  console.log(arr.length);  
+  return arr;  
 }
 
-
+///-------------------Driver code---------------------
 
 //adds code for testing
 var words = ["long phrase","longest phrase","longer phrase"];
@@ -87,7 +98,7 @@ words.push("phrase");
 //console.log(words);
 
 //driver code for printer function
-console.log(printer(words));
+//printer(words);
 
 //sets up Objects
 var firstObject = {name: "Steven", age: 54};
@@ -104,11 +115,41 @@ compareTwo(firstObject, secondObject);
 
 
 
-console.log(randomInteger(1, 10));
-console.log(randomWord());
+//console.log(randomInteger(1, 10));
+//console.log(randomWord());
 
-randomTestData(3);
+//var arrayOfWords = randomTestData(randomInteger(1, 10));
+//console.log(arrayOfWords);
+//printer(arrayOfWords);
 
-var we = [randomWord(), randomWord(), randomWord()];
-console.log(we);
+//for testing
+//var we = [randomWord(), randomWord(), randomWord()];
+//console.log(we);
+
+//Add driver code that does the following 10 times: 
+//generates an array, prints the array, 
+//feeds the array to your "longest word" 
+//function, and prints the result.
+
+
+
+for(var i = 0; i < 10; i++)
+ words.push(printer(randomTestData(randomInteger(1, 10))));
+ 
+//words;
+
+console.log("Generates 10 arrays, with max 10 words");
+var codeArray = new Array();
+for(var i=0;i<10;i++)
+  codeArray.push(randomTestData(randomInteger(1, 10)));
+
+console.log("Now printing array");
+console.log(codeArray);
+
+var printerArr = new Array();
+for(var i=0;i<10;i++)
+  printer(codeArray[i]);
+
+
+
 
