@@ -23,7 +23,7 @@ function printer(array){
   var longest = arr.shift()
 
   //returns the the variable longest
-  return longest;
+  console.log(longest);
 }
 
 
@@ -98,7 +98,7 @@ words.push("phrase");
 //console.log(words);
 
 //driver code for printer function
-console.log(printer(words));
+//printer(words);
 
 //sets up Objects
 var firstObject = {name: "Steven", age: 54};
@@ -118,9 +118,9 @@ compareTwo(firstObject, secondObject);
 //console.log(randomInteger(1, 10));
 //console.log(randomWord());
 
-var arrayOfWords = randomTestData(randomInteger(1, 10));
-console.log(arrayOfWords);
-
+//var arrayOfWords = randomTestData(randomInteger(1, 10));
+//console.log(arrayOfWords);
+//printer(arrayOfWords);
 
 //for testing
 //var we = [randomWord(), randomWord(), randomWord()];
@@ -131,7 +131,25 @@ console.log(arrayOfWords);
 //feeds the array to your "longest word" 
 //function, and prints the result.
 
-for(var i = 0; i < 10, i++)
-  console.log(printer(randomTestData(randomInteger(1, 10))));
+
+
+for(var i = 0; i < 10; i++)
+ words.push(printer(randomTestData(randomInteger(1, 10))));
+ 
+//words;
+
+console.log("Generates 10 arrays, with max 10 words");
+var codeArray = new Array();
+for(var i=0;i<10;i++)
+  codeArray.push(randomTestData(randomInteger(1, 10)));
+
+console.log("Now printing array");
+console.log(codeArray);
+
+var printerArr = new Array();
+for(var i=0;i<10;i++)
+  printer(codeArray[i]);
+
+
 
 
