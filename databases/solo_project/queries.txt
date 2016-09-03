@@ -1,0 +1,66 @@
+
+
+***display the information in one table***
+SELECT * FROM partners;
+    1|Jordan|true|4
+    2|Chelsea|false|2
+    3|Kate|false|1
+    4|Gabbie|true|3
+
+***update an item that meets some condition***
+UPDATE partners SET position=3 WHERE name="Gabbie";
+
+***display information in both tables using one querry***
+SELECT * FROM partners, position WHERE partners.position = position.id;
+    1|Jordan|true|4|4|Barista
+    2|Chelsea|false|2|2|Asst. Manager
+    3|Kate|false|1|1|Manager
+    4|Gabbie|true|3|3|Shift Supervisor
+
+
+***display a narrower selection of columns from both tables***
+SELECT partners.name, partners.likes_cold_brew, position.name FROM partners JOIN position ON partners.position = position.id;
+    Jordan|true|Barista
+    Chelsea|false|Asst. Manager
+    Kate|false|Manager
+    Gabbie|true|Asst. Manager
+
+***delete an item***
+DELETE FROM partners WHERE position=1;
+
+
+SELECT partners.name, position.name    
+    FROM partners, position
+    ON partners.position = position.id;  
+
+    Jordan|Barista
+    Chelsea|Asst. Manager
+    Gabbie|Shift Supervisor
+
+***JOINS***
+SELECT partners.name
+FROM partners
+LEFT JOIN position
+ON partners.position = position.id;
+
+    Jordan|4
+    Chelsea|2
+    Gabbie|3
+
+
+SELECT partners.name, position.name
+FROM partners
+LEFT JOIN position
+ON partners.position = position.id;
+
+    Jordan|Barista
+    Chelsea|Asst. Manager
+    Gabbie|Shift Supervisor
+
+SELECT partners.name, position.name
+FROM partners
+LEFT JOIN position
+WHERE partners.position = position.id AND partners.likes_cold_brew="true";
+
+    Jordan|Barista
+    Gabbie|Shift Supervisor
