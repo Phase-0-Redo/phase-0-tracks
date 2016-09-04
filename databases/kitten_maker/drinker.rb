@@ -1,3 +1,4 @@
+require 'pp'
 class Drink
   attr_reader :name, :decaf
   attr_accessor :drink_size, :iced, :number_of_shots
@@ -129,32 +130,28 @@ end
 
 def new_drink
   drink = Drink.new
-  drink.name
-  drink.decaf
-  drink.size
-  drink.hot_or_cold
-  drink.shot_quantity
-  drink.printout(@name, @iced, @decaf)
+  drink_hash ={}
+  drink_hash["name"] = drink.name
+  drink_hash["decaf"] = drink.decaf
+  drink_hash["size"] = drink.size
+  drink_hash["hot or cold"] = drink.hot_or_cold
+  drink_hash["shot quantity"]= drink.shot_quantity
+  #drink.printout(@name, @iced, @decaf)
   drink.determine_creature(@iced, @decaf, @shot_quantity, @drink_size)
   drink
 end
 
-#order_1 = Drink.new
-#order_1.name
-#order_1.decaf
-#order_1.size
-#order_1.hot_or_cold
-#order_1.shot_quantity
-#p order_1
 
-drink_queue = []
+$drink_queue = []
 valid_input = false
-
 until valid_input
   puts "Can I get an order started for you?\nWhen done order type done, when ready."
     answer = gets.chomp.downcase
     if answer == "yes"
-      drink_queue << new_drink
+
+      $drink_queue << new_drink
+      
+
     elsif answer == "no"
       puts "Maybe another time."
       valid_input = true
@@ -162,9 +159,10 @@ until valid_input
       valid_input = true
     end
 end
-   
-drink_queue.each do |instance|
-  p instance
-end   
 
-puts drink_queue.class
+$drink_queue   
+#drink_queue.each do |instance|
+#  p instance
+#end   
+
+#pp drink_queue

@@ -35,17 +35,65 @@ db.execute(create_table_cmd)
 # add LOOOOTS of kittens!
 # so. many. kittens. 
 #KittenExplosion
-def create_drink(db, name)
+
+def get_drink(db, name, decaf, drink_size, iced, number_of_shots)
+  db.execute("INSERT INTO drinks (name, decaf, drink_size, iced, number_of_shots) VALUES (?, ?, ?, ?, ?)", [name, decaf, drink_size, iced, number_of_shots])
+end
+
+def get_name(db, name)
   db.execute("INSERT INTO drinks (name) VALUES (?)", [name])
 end
 
-3.times do
-  create_drink(db, drink.name)
+
+def get_decaf(db, decaf)
+  db.execute("INSERT INTO drinks (decaf) VALUES (?)", [decaf])
 end
 
-# explore ORM by retrieving data
-# kittens = db.execute("SELECT * FROM kittens")
-# kittens.each do |kitten|
-#  puts "#{kitten['name']} is #{kitten['age']}"
-# end
+def get_drink_size(db, drink_size)
+  db.execute("INSERT INTO drinks (name) VALUES (?)", [drink_size])
+end
 
+def get_iced(db, iced)
+  db.execute("INSERT INTO drinks (name) VALUES (?)", [iced])
+end
+
+def get_number_of_shots(db, number_of_shots)
+  db.execute("INSERT INTO drinks (name) VALUES (?)", [number_of_shots])
+end
+
+
+#3.times do
+#  get_drink(db, Faker::Name.name, 'true', 'small', 'false', 2)
+  #get_name(db, Faker::Name.name)
+  #get_decaf(db, Faker::Boolean.boolean)
+  #get_drink_size(db, Faker::Lorem.word)
+  #get_iced(db, Faker::Boolean.boolean)
+  #get_number_of_shots(db, Faker::Number.number(2))
+#end
+
+$drink_queue.each do |drink|
+  get_name(db, drink.name)
+end
+
+#$drink_queue.each do |drink|
+#  get_decaf(db, drink.decaf)
+#end
+#
+#$drink_queue.each do |drink|
+#  get_drink_size(db, drink.drink_size)
+#end
+#
+#$drink_queue.each do |drink|
+#  get_iced(db, drink.iced)
+#end
+#
+#$drink_queue.each do |drink|
+#  get_number_of_shots(db, drink.number_of_shots)
+#end
+
+# explore ORM by retrieving data
+drinks = db.execute("SELECT * FROM drinks")
+# drinks.each do |drink|
+puts drinks
+# end
+p drinks.class
