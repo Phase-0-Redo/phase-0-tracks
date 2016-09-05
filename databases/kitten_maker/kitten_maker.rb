@@ -36,7 +36,7 @@ def create_age(db, age)
   db.execute("UPDATE kittens SET age = Faker::Number.number(1) WHERE id=INT", [age])
 end
 
-1000.times do
+10.times do
   create_kitten(db, Faker::Name.name, 0)
 end
 
@@ -45,6 +45,7 @@ end
  kittens.each do |kitten|
   create_age(db, Faker::Number.number(1))
  end
+ 
 #kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
 #  puts "#{kitten['name']} is #{kitten['age']}"
