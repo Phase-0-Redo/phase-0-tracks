@@ -6,8 +6,8 @@ require 'sqlite3'
 require 'faker'
 
 # create SQLite3 database
-db = SQLite3::Database.new("drink_table.db")
-db.results_as_hash = true
+$db = SQLite3::Database.new("drink_table.db")
+$db.results_as_hash = true
 
 #string delimiters
 create_table_cmd = <<-SQL
@@ -25,15 +25,22 @@ create_table_cmd = <<-SQL
 SQL
 
 #creates a drinks table
-db.execute(create_table_cmd)
+$db.execute(create_table_cmd)
 
 #adds test drink
 #db.execute("INSERT INTO drink_table (customer_name) VALUES ('Bob')")
+p $drinks
+
+#iterates over to global vairable #drinks to insert 
+  $drinks.each do |drink|
+    $db.execute("INSERT INTO drink_table (customer_name) VALUES (?)", ['#{$drinks[drink][:customer_name]}'])
+  end
 
 
-$drinks.each do |drink|
-  db.execute("INSERT INTO drink_table (customer_name) VALUE (?)", drink[:customer_name])
-end
+p $drinks.length
+#$drinks.each do |drink|
+#  db.execute("INSERT INTO drink_table (customer_name) VALUE (?)", drink[:customer_name])
+#end
 #drink_arr.each do |order|
 #db.execute("INSERT INTO drink_table(
 #    customer_name, 
@@ -62,8 +69,8 @@ end
 
 
 
-drinks = db.execute("SELECT * FROM drink_table")
+drinks = $db.execute("SELECT * FROM drink_table")
 
 drinks.each do |drink|
-  puts "#{drink['customer_name']} ordered a drink."
+  puts "#{drink['customer_name']} person ordered a drink."
  end
