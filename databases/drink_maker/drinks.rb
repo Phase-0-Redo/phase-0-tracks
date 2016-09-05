@@ -1,6 +1,6 @@
 require 'pp'
-require 'sqlite3'
 
+#require 'sqlite3'
 # array for storing drinks
 drinks_arr = []
 
@@ -30,7 +30,13 @@ other: nil
 
 #user input for decaf
   puts "Do you want to make this decaf?"
-  drink[:decaf] = gets.chomp
+  answer = gets.chomp
+    if answer == "no" || answer == "nope"
+      drink[:decaf] = false
+    elsif answer == "yes"
+      drink[:decaf] = true
+    end
+
   puts
 
 #user input for shots
@@ -69,7 +75,7 @@ other: nil
 #user input for milk type
   puts "Got milk? What kind can I get you?"
   answer = gets.chomp.downcase
-    if answer == "no" || "none"
+    if answer == "no" || answer == "none"
       drink[:milk] = nil
     else
       drink[:milk] = answer
@@ -92,16 +98,17 @@ other: nil
 end
 
 #initial drink order
-drinks_arr << new_drink
+#drinks_arr << new_drink
 
 
   #adds into the array until user is done
   valid_input = false
   until valid_input
-    puts "Do you want to place another order?"
+    puts "Do you want to place an order?"
     answer = gets.chomp.downcase
       if answer == "yes"
         drinks_arr << new_drink
+        pp drink_arr
       elsif answer == "no"
         valid_input = true
       else 
@@ -109,31 +116,33 @@ drinks_arr << new_drink
       end
   end
 
-drink_arr.each do |order|
-db.execute("INSERT INTO drink_table(
-    customer_name, 
-    drink_type, 
-    decaf, 
-    shots, 
-    flavor, 
-    pumps_flavor, 
-    milk, 
-    other
-  ) 
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
-    customer_name,
-    drink_type,
-    decaf,
-    shots,
-    flavor,
-    pumps_flavor,
-    milk,
-    other
-  ]
-  )
-end
+$drinks = drinks_arr
+
+#drink_arr.each do |order|
+#db.execute("INSERT INTO drink_table(
+#    customer_name, 
+#    drink_type, 
+#    decaf, 
+#    shots, 
+#    flavor, 
+#    pumps_flavor, 
+#    milk, 
+#    other
+#  ) 
+#  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
+#    customer_name,
+#    drink_type,
+#    decaf,
+#    shots,
+#    flavor,
+#    pumps_flavor,
+#    milk,
+#    other
+#  ]
+#  )
+#end
 #for visualization
-#pp drinks_arr
+pp drinks_arr
 
 #for testing
 #p drinks_arr[0][:flavor]
