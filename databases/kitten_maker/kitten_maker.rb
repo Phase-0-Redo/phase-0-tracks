@@ -6,7 +6,7 @@
 require 'sqlite3'
 require 'faker'
 
-# create SQLite3 database
+# create SQLite3 datgemabase
 db = SQLite3::Database.new("kittens.db")
 db.results_as_hash = true
 
@@ -32,12 +32,21 @@ def create_kitten(db, name, age)
   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
 end
 
-10000.times do
+def create_age(db, age)
+  db.execute("UPDATE kittens SET age = Faker::Number.number(1) WHERE id=INT", [age])
+end
+
+10.times do
   create_kitten(db, Faker::Name.name, 0)
 end
 
 # explore ORM by retrieving data
-# kittens = db.execute("SELECT * FROM kittens")
+ kittens = db.execute("SELECT * FROM kittens")
+ kittens.each do |kitten|
+  create_age(db, Faker::Number.number(1))
+ end
+ 
+#kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
 #  puts "#{kitten['name']} is #{kitten['age']}"
 # end
