@@ -108,7 +108,7 @@ end
     answer = gets.chomp.downcase
       if answer == "yes"
         drinks_arr << new_drink
-        pp drink_arr
+        pp drinks_arr
       elsif answer == "no"
         valid_input = true
       else 
@@ -118,31 +118,8 @@ end
 
 $drinks = drinks_arr
 
-#drink_arr.each do |order|
-#db.execute("INSERT INTO drink_table(
-#    customer_name, 
-#    drink_type, 
-#    decaf, 
-#    shots, 
-#    flavor, 
-#    pumps_flavor, 
-#    milk, 
-#    other
-#  ) 
-#  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
-#    customer_name,
-#    drink_type,
-#    decaf,
-#    shots,
-#    flavor,
-#    pumps_flavor,
-#    milk,
-#    other
-#  ]
-#  )
-#end
 #for visualization
-pp drinks_arr
+#pp drinks_arr
 
 #for testing
 #p drinks_arr[0][:flavor]
