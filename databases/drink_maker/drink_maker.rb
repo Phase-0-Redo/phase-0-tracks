@@ -30,6 +30,10 @@ db.execute(create_table_cmd)
 #adds test drink
 #db.execute("INSERT INTO drink_table (customer_name) VALUES ('Bob')")
 
+
+$drinks.each do |drink|
+  db.execute("INSERT INTO drink_table (customer_name) VALUE (?)", drink[:customer_name])
+end
 #drink_arr.each do |order|
 #db.execute("INSERT INTO drink_table(
 #    customer_name, 
