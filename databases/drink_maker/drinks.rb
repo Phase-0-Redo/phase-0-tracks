@@ -1,6 +1,5 @@
 require 'pp'
 
-#require 'sqlite3'
 # array for storing drinks
 drinks_arr = []
 
