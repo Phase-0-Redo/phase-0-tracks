@@ -11,16 +11,16 @@ db.results_as_hash = true
 
 #string delimiters
 create_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS drinks(
+  CREATE TABLE IF NOT EXISTS drink_table(
     id INTEGER PRIMARY KEY,
-    customer_name: VARCHAR(255),
-    drink_type: VARCHAR(255),
-    decaf: BOOLEAN,
-    shots: INT,
-    flavor: VARCHAR(255),
-    pumps_flavor: INT,
-    milk: VARCHAR(255),
-    other: VARCHAR(255)
+    customer_name VARCHAR(255),
+    drink_type VARCHAR(255),
+    decaf BOOLEAN,
+    shots INT,
+    flavor VARCHAR(255),
+    pumps_flavor INT,
+    milk VARCHAR(255),
+    other VARCHAR(255)
   )
 SQL
 
@@ -28,3 +28,38 @@ SQL
 db.execute(create_table_cmd)
 
 #adds test drink
+#db.execute("INSERT INTO drink_table (customer_name) VALUES ('Bob')")
+
+#drink_arr.each do |order|
+#db.execute("INSERT INTO drink_table(
+#    customer_name, 
+#    drink_type, 
+#    decaf, 
+#    shots, 
+#    flavor, 
+#    pumps_flavor, 
+#    milk, 
+#    other
+#  ) 
+#  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
+#    customer_name,
+#    drink_type,
+#    decaf,
+#    shots,
+#    flavor,
+#    pumps_flavor,
+#    milk,
+#    other
+#  ]
+#  )
+#end
+
+
+
+
+
+drinks = db.execute("SELECT * FROM drink_table")
+
+drinks.each do |drink|
+  puts "#{drink['customer_name']} ordered a drink."
+ end
