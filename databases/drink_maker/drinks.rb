@@ -1,5 +1,5 @@
 require 'pp'
-
+require 'sqlite3'
 
 # array for storing drinks
 drinks_arr = []
@@ -109,6 +109,29 @@ drinks_arr << new_drink
       end
   end
 
+drink_arr.each do |order|
+db.execute("INSERT INTO drink_table(
+    customer_name, 
+    drink_type, 
+    decaf, 
+    shots, 
+    flavor, 
+    pumps_flavor, 
+    milk, 
+    other
+  ) 
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
+    customer_name,
+    drink_type,
+    decaf,
+    shots,
+    flavor,
+    pumps_flavor,
+    milk,
+    other
+  ]
+  )
+end
 #for visualization
 #pp drinks_arr
 
