@@ -31,13 +31,17 @@ $db.execute(create_table_cmd)
 #db.execute("INSERT INTO drink_table (customer_name) VALUES ('Bob')")
 p $drinks
 
-#iterates over to global vairable #drinks to insert 
+#iterates over to global vairable #drinks to insert customer name 
   $drinks.each do |drink|
-    $db.execute("INSERT INTO drink_table (customer_name) VALUES (?)", ['#{$drinks[drink][:customer_name]}'])
+    i = 0
+    until i <= $drinks.length
+      $db.execute("INSERT INTO drink_table (customer_name) VALUES (?)", ['#{$drinks[#{i}][:customer_name]}'])
+      i += 1
+    end
   end
 
 
-p $drinks.length
+
 #$drinks.each do |drink|
 #  db.execute("INSERT INTO drink_table (customer_name) VALUE (?)", drink[:customer_name])
 #end
