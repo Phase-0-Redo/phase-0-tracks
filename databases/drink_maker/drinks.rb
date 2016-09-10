@@ -122,7 +122,6 @@ def other
       #other = gets.chomp
       $drink[:other] = gets.chomp
     else 
-      
       puts "That does not comput yes or no?"
     end
   
@@ -155,7 +154,7 @@ end
 
 drink_builder
  
- 
+
   #adds into the array until user is done
 #  valid_input = false
 #  until valid_input
