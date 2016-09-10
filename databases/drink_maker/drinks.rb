@@ -32,7 +32,7 @@ def drink_type
   puts "What can I get for you?"
   #type = gets.chomp
   $drink[:drink_type] = gets.chomp
-  #puts
+  puts
 end
 
 #user input for decaf
@@ -41,11 +41,12 @@ def decaf
   answer = gets.chomp
     if answer == "no" || answer == "nope"
       #decaf = false
-      $drink[:decaf] = false
+      $drink[:decaf] = 'false'
     elsif answer == "yes"
       #decaf = true
-      $drink[:decaf] = true
+      $drink[:decaf] = 'true'
     end
+  puts
 end
 
 
@@ -54,6 +55,7 @@ def shots
   puts "How many shots would you like?"
   #shots = gets.to_i
   $drink[:shots] = gets.to_i
+  puts
 end 
   #puts
 
@@ -80,7 +82,6 @@ end
 
   #user input for amount of flavor
   def pumps
-    puts "Did"
       if $drink[:flavor] == nil
       #if drink[:flavor] == nil
         #puts "No worries"
@@ -114,15 +115,15 @@ end
 def other
   puts "Any other input?"
   answer = gets.chomp.downcase
-    if answer == "no"
+    if answer == "no" || answer == "nope"
       #other = nil
       $drink[:other] = nil
     elsif answer == "yes"
       puts "What can we do for you?"
       #other = gets.chomp
       $drink[:other] = gets.chomp
-    else 
-      puts "That does not comput yes or no?"
+    else
+      $drink[:other] = "#{answer}"
     end
   
   #p drink
