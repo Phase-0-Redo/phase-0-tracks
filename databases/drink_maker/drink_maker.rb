@@ -29,46 +29,10 @@ $db.execute(create_table_cmd)
 
 #adds test drink
 #db.execute("INSERT INTO drink_table (customer_name) VALUES ('Bob')")
-p $drinks
-
-#iterates over to global vairable #drinks to insert customer name 
-  $drinks.each do |drink|
-    i = 0
-    until i <= $drinks.length
-      $db.execute("INSERT INTO drink_table (customer_name) VALUES (?)", ['#{$drinks[#{i}][:customer_name]}'])
-      i += 1
-    end
-  end
 
 
-
-#$drinks.each do |drink|
-#  db.execute("INSERT INTO drink_table (customer_name) VALUE (?)", drink[:customer_name])
-#end
-#drink_arr.each do |order|
-#db.execute("INSERT INTO drink_table(
-#    customer_name, 
-#    drink_type, 
-#    decaf, 
-#    shots, 
-#    flavor, 
-#    pumps_flavor, 
-#    milk, 
-#    other
-#  ) 
-#  VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
-#    customer_name,
-#    drink_type,
-#    decaf,
-#    shots,
-#    flavor,
-#    pumps_flavor,
-#    milk,
-#    other
-#  ]
-#  )
-#end
-
+#inserts customer name, drink type, decaf, shots, flavor, pumps, milk, other into database 
+$db.execute("INSERT INTO drink_table (customer_name, drink_type, decaf, shots, flavor, pumps_flavor, milk, other) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [$drink[:customer_name], $drink[:drink_type], $drink[:decaf], $drink[:shots], $drink[:flavor], $drink[:pumps_flavor], $drink[:milk], $drink[:other]])
 
 
 
@@ -76,5 +40,21 @@ p $drinks
 drinks = $db.execute("SELECT * FROM drink_table")
 
 drinks.each do |drink|
-  puts "#{drink['customer_name']} person ordered a drink."
- end
+  puts "#{drink['customer_name']}  ordered a #{drink['drink_type']}."
+  puts "It has #{drink['shots']} shots."
+  puts "It has #{drink['flavor']} flavoring with #{drink['pumps_flavor']} pumps."
+  puts "Also it has #{drink['milk']} milk"
+    if "#{drink['decaf']}" == "true"
+      puts "It's decaf"
+    elsif "#{drink['decaf']}" == "false"
+      puts "It's not decaf"
+    end
+
+    if "#{drink['other']}" == 'NULL'
+      puts "You're all set."
+    else
+      puts "Can't forget #{drink['other']}"
+    end
+
+end
+
