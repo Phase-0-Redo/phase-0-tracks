@@ -1,4 +1,4 @@
-how to tackle
+ how to tackle
     research and find resources on how to
         add event listeners for clicking
         add event listener for hovering 
